@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('firamono-bold-webfont.woff2') format('woff2'),
+         url('firamono-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('firamono-regular-webfont.woff2') format('woff2'),
+         url('firamono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/npatarino.css">
+
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,17 +26,36 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section data-markdown="closure_operator.md" data-line-numbers="1,1-1"></section>
+        <section data-background-image="assets/images/cover.webp"></section>
+        <section data-background-image="assets/images/pasadena.webp" data-background-opacity="0.15">
+            <h1>Pasadena</h1>
+            <h1><i>California</i></h1>
+        </section>
+        <section data-line-numbers="3,7-10" data-markdown="assets/md/closure_operator.md"></section>
+        <section>
+            <h1>Basic concepts</h1>
+            <h1><i>Associativity</i></h1>
+        </section>
     </div>
 </div>
 
 <script src="js/reveal.js"></script>
 
 <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        controls: false,
+        transition: 'slide',
+        backgroundTransition: 'slide',
+        touch: true,
+        progress: true,
+        history: true,
+        viewDistance: 3,
+        margin: 0.1,
+        minScale: 0.2,
+        maxScale: 1.5,
+
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
