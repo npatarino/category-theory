@@ -175,24 +175,73 @@
         </section>
         <section>
             <h1>Composition</h1>
+            <p>
+                \[\begin{aligned}
+                N(x)N(y) == N(xy) \\
+                \end{aligned} \]
+            </p>
+
+            <p>
+                \[\begin{aligned}
+                A \xrightarrow{\qquad f\qquad} B \xrightarrow{\qquad g\qquad} C \\
+                \end{aligned} \]
+            </p>
+
+            <p>
+                \[\begin{aligned}
+                A \xrightarrow{\qquad f \circ g \qquad} C \\
+                \end{aligned} \]
+            </p>
+            <pre><code data-trim data-noescape style="text-align: center">fillGlass(getBottle()) = getBottleAndFillGlass()</code></pre>
         </section>
         <section data-background-image="assets/images/young-old.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Closure operator</i></h1>
         </section>
         <section>
             <h1>Closure <i>operator</i></h1>
+            <pre><code data-trim data-noescape style="text-align: center">
+                fun &lt;A&gt; method(a: A): A = work(a)
+
+                fun dollarsToEuro(dollars: Double): Double = dollars * 0.89
+            </code></pre>
         </section>
         <section data-background-image="assets/images/superheroes.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Associativity</i></h1>
         </section>
         <section>
             <h1><i>Associativy</i></h1>
+            <p>
+                \[\begin{aligned}
+                h \circ (g \circ f) = (h \circ g) \circ f \\
+                \end{aligned} \]
+            </p>
+            <pre><code data-trim data-noescape style="text-align: center">
+                fun sum(a: Int, b: Int): Int = a + b
+
+                fun validation() = sum(3, sum(4, 5)) == sum(sum(3, 4), 5)
+            </code></pre>
         </section>
         <section data-background-image="assets/images/identity.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Identity</i></h1>
         </section>
         <section>
             <h1><i>Identity</i></h1>
+            <p>
+                \[\begin{aligned}
+                A == A \\
+                \end{aligned} \]
+            </p>
+
+            <p>
+                \[\begin{aligned}
+                f \circ id_{a} == f == id_{b} \circ f \\
+                \end{aligned} \]
+            </p>
+            <pre><code data-trim data-noescape style="text-align: center">
+                val text = "Big Bang Category Theory".plus("")
+
+                val number = 2019.plus(0)
+            </code></pre>
         </section>
         <section data-background-image="assets/images/beards.webp" data-background-opacity="0.15">
             <h1><i>Typeclasses</i></h1>
@@ -215,22 +264,100 @@
         <section>
             <h1>Monoid</h1>
             <p>1 object category</p>
+            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
         </section>
         <section>
             <h1>Monoid - <i>Laws</i></h1>
             <p>* Closure operator</p>
+            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+            <p>* Associativity property</p>
+            <p>
+                \[\begin{aligned}
+                (a \circ b) \circ c == a \circ (b \circ c) \\
+                \end{aligned} \]
+            </p>
+            <pre><code data-trim data-noescape style="text-align: center">a.combine(b).combine(c) == a.combine(b.combine(c))</code></pre>
+            <p>* Identity</p>
+            <p>
+                \[\begin{aligned}
+                a \circ identity_{a} == a == identity_{a} \circ a \\
+                \end{aligned} \]
+            </p>
+            <pre><code data-trim data-noescape style="text-align: center">a.combine(empty()) == a == empty&lt;A&gt;().combine(a)</code></pre>
         </section>
         <section>
             <h1>Monoid - <i>Definition</i></h1>
+            <pre><code data-trim data-noescape>
+                interface Monoid&lt;F&gt; {
+
+                  fun F.combine(b: F): F
+
+                  fun empty(): F
+
+                  operator fun F.plus(b: F): F = this.combine(b)
+                  // monoidA.combine(monoidB) → monoidA + monoidB
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Monoid - <i>Implementation</i></h1>
+            <pre><code data-trim data-noescape>
+                object StringMonoid : Monoid&lt;String&gt; {
+
+                  override fun String.combine(b: String): String = "${this}$b"
+
+                  override fun empty(): String = ""
+                }
+            </code></pre>
+            <br>
+            <pre><code data-trim data-noescape>
+                object IntMonoid : Monoid&lt;Int&gt; {
+
+                  override fun Int.combine(b: Int): Int = this + b
+
+                  override fun empty(): Int = 0
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Monoid - <i>Testing</i></h1>
+            <pre><code data-trim data-noescape>
+                fun &lt;F&gt; Monoid&lt;F&gt;.associativityLaw(a: F, b: F, c: F) =
+                  Assert.assertEquals(
+                    a.combine(b).combine(c),
+                    a.combine(b.combine(c))
+                  )
+            </code></pre>
+            <br>
+            <pre><code data-trim data-noescape>
+                fun &lt;F&gt; Monoid&lt;F&gt;.identityLaw(a: F) {
+                  Assert.assertEquals(a, empty().combine(a))
+                  Assert.assertEquals(a, a.combine(empty()))
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Monoid - <i>Testing</i></h1>
+            <pre><code data-trim data-noescape>
+            class MonoidLawsTest : UnitSpec() {
+
+              init {
+
+                testLaws(
+
+                  Law("Monoids: identityLaw") {
+                    StringMonoid.identityLaw("Hedy Lamarr")
+                    IntMonoid.identityLaw(1914)
+                  },
+
+                  Law("Monoids: associativity") {
+                    StringMonoid.associativityLaw("Grace", "Murray", "Hopper")
+                    IntMonoid.associativityLaw(9, 12, 1906)
+                  }
+                )
+              }
+            }
+            </code></pre>
         </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1><i>Functor</i></h1>
@@ -238,6 +365,12 @@
         <section>
             <h1>Functor</h1>
             <p><i>Transformer</i></p>
+            <p>method: map()</p>
+            <p>
+                \[\begin{aligned}
+                A \rightarrow map() \rightarrow B \\
+                \end{aligned} \]
+            </p>
         </section>
         <section>
             <h1>Functor - <i>Laws</i></h1>
@@ -461,14 +594,12 @@
         margin: 0.1,
         minScale: 0.2,
         maxScale: 1.5,
-
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
             {src: 'plugin/notes/notes.js', async: true},
             {src: 'plugin/highlight/highlight.js', async: true},
-            {src: 'slides/plugin/menu/menu.js'},
-            {src: 'slides/plugin/math/math.js', async: true}
+            {src: 'plugin/math/math.js', async: true}
         ]
     });
 </script>

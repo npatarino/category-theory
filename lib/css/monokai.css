@@ -46,10 +46,7 @@
     color: #DCDCCC;
 }
 
-.hljs-name {
-    color: red;
-}
-
+.hljs-name,
 .hljs-variable,
 .hljs-type {
     color: #DFAE8F;
