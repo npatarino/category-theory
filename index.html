@@ -98,10 +98,10 @@
             <h1>Design <i>patterns</i></h1>
         </section>
         <section>
-            <h1>Design <i>patterns</i></h1>
+            <h3>Design <i>patterns</i></h3>
             <ul>
-                <li>Offer solutions</li>
-                <li>Offer vocabulary</li>
+                <li class="fragment fade-in-then-semi-out">Offer solutions</li>
+                <li class="fragment fade-in-then-semi-out">Offer vocabulary</li>
             </ul>
         </section>
         <section data-background-image="assets/images/bernadette-as-mom.webp" data-background-opacity="0.15">
@@ -114,55 +114,55 @@
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_1.png" alt=""/>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_1.png"
+                                                            alt=""/>
         </section>
         <section data-background-image="assets/images/indecision.webp" data-background-opacity="0.15">
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_2.png" alt=""/>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_2.png"
+                                                            alt=""/>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_3.png" alt=""/>
-        </section>
-        <section data-background-image="assets/images/indecision.webp" data-background-opacity="0.15">
-            <h1>The indecision <i>amalgamation</i></h1>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_4.png"
+                                                            alt=""/>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_4.png" alt=""/>
-        </section>
-        <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_5.png" alt=""/>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_5.png"
+                                                            alt=""/>
         </section>
         <section data-background-image="assets/images/sad-hulk.webp" data-background-opacity="0.15">
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_6.png" alt=""/>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_6.png"
+                                                            alt=""/>
         </section>
         <section>
-            <h1>The indecision <i>amalgamation</i></h1><img src="assets/images/indecision_7.png" alt=""/>
+            <h1>The indecision <i>amalgamation</i></h1><img class="fragment" src="assets/images/indecision_7.png"
+                                                            alt=""/>
         </section>
         <section data-background-image="assets/images/sheldon_happy.webp" data-background-opacity="0.15">
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section>
-            <h1>Functor</h1><img src="assets/images/indecision_3_functor.png" alt=""/>
+            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor.png" alt=""/>
         </section>
         <section>
-            <h1>Functor</h1><img src="assets/images/indecision_3_functor_2.png" alt=""/>
+            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor_2.png" alt=""/>
         </section>
         <section>
-            <h1>Functor</h1><img src="assets/images/indecision_3_functor_3.png" alt=""/>
+            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor_3.png" alt=""/>
         </section>
         <section>
-            <h1>Monad</h1><img src="assets/images/indecision_7_monad.png" alt=""/>
+            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad.png" alt=""/>
         </section>
         <section>
-            <h1>Monad</h1><img src="assets/images/indecision_7_monad_2.png" alt=""/>
+            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad_2.png" alt=""/>
         </section>
         <section>
-            <h1>Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
+            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad_3.png" alt=""/>
         </section>
         <section data-background-image="assets/images/after-bernadette-explanation.webp" data-background-opacity="0.15">
             <h1>Too <i>simple</i></h1>
@@ -175,73 +175,66 @@
         </section>
         <section>
             <h1>Composition</h1>
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 N(x)N(y) == N(xy) \\
                 \end{aligned} \]
             </p>
 
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 A \xrightarrow{\qquad f\qquad} B \xrightarrow{\qquad g\qquad} C \\
                 \end{aligned} \]
             </p>
 
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 A \xrightarrow{\qquad f \circ g \qquad} C \\
                 \end{aligned} \]
             </p>
-            <pre><code data-trim data-noescape style="text-align: center">fillGlass(getBottle()) = getBottleAndFillGlass()</code></pre>
+            <pre class="fragment"><code data-trim data-noescape style="text-align: center">fillGlass(getBottle()) = getBottleAndFillGlass()</code></pre>
         </section>
         <section data-background-image="assets/images/young-old.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Closure operator</i></h1>
         </section>
         <section>
             <h1>Closure <i>operator</i></h1>
-            <pre><code data-trim data-noescape style="text-align: center">
-                fun &lt;A&gt; method(a: A): A = work(a)
-
-                fun dollarsToEuro(dollars: Double): Double = dollars * 0.89
-            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape>fun &lt;A&gt; method(a: A): A = work(a)</code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape>fun dollarsToEuro(dollars: Double): Double = dollars * 0.89</code></pre>
         </section>
         <section data-background-image="assets/images/superheroes.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Associativity</i></h1>
         </section>
         <section>
             <h1><i>Associativy</i></h1>
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 h \circ (g \circ f) = (h \circ g) \circ f \\
                 \end{aligned} \]
             </p>
-            <pre><code data-trim data-noescape style="text-align: center">
-                fun sum(a: Int, b: Int): Int = a + b
-
-                fun validation() = sum(3, sum(4, 5)) == sum(sum(3, 4), 5)
-            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape>fun sum(a: Int, b: Int): Int = a + b</code></pre>
+            <pre class="fragment"><code data-trim data-noescape>fun validation() = sum(3, sum(4, 5)) == sum(sum(3, 4), 5)</code></pre>
         </section>
         <section data-background-image="assets/images/identity.webp" data-background-opacity="0.15">
             <h1>Basic concepts<br/><i>Identity</i></h1>
         </section>
         <section>
             <h1><i>Identity</i></h1>
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 A == A \\
                 \end{aligned} \]
             </p>
-
-            <p>
+            <p class="fragment">
                 \[\begin{aligned}
                 f \circ id_{a} == f == id_{b} \circ f \\
                 \end{aligned} \]
             </p>
-            <pre><code data-trim data-noescape style="text-align: center">
-                val text = "Big Bang Category Theory".plus("")
-
-                val number = 2019.plus(0)
-            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape style="text-align: center">val text = "Big Bang Category Theory".plus("")</code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape
+                                        style="text-align: center">val number = 2019.plus(0)</code></pre>
         </section>
         <section data-background-image="assets/images/beards.webp" data-background-opacity="0.15">
             <h1><i>Typeclasses</i></h1>
@@ -249,44 +242,75 @@
         <section>
             <h1>Design <i>patterns</i> ~ Typleclasses</h1>
             <ul>
-                <li>Offer solutions</li>
-                <li>Offer vocabulary</li>
-                <li>Laws of maths</li>
-                <li>Independence (libraries, technology, languages)</li>
+                <li class="fragment fade-in-then-semi-out">Offer solutions</li>
+                <li class="fragment fade-in-then-semi-out">Offer vocabulary</li>
+                <li class="fragment fade-in-then-semi-out">Laws of maths</li>
+                <li class="fragment fade-in-then-semi-out">Independence (libraries, technology, languages)</li>
             </ul>
         </section>
         <section data-background-image="assets/images/penny-ape.webp" data-background-opacity="0.15">
             <h1><i>Typeclasses</i></h1>
         </section>
         <section>
-            <h1><i>Monoid</i></h1>
+            <h1><i>Typeclasses</i></h1>
+            <ul>
+                <li class="fragment fade-in-then-semi-out">Monoid</li>
+                <li class="fragment fade-in-then-semi-out">Functor</li>
+                <li class="fragment fade-in-then-semi-out">Applicative</li>
+                <li class="fragment fade-in-then-semi-out">Monad</li>
+            </ul>
         </section>
         <section>
             <h1>Monoid</h1>
-            <p>1 object category</p>
-            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+            <ul>
+                <li class="fragment fade-in-then-semi-out">1 object category</li>
+                <li class="fragment fade-in-then-semi-out">Combiner</li>
+                <li class="fragment fade-in-then-semi-out">method: combine()</li>
+                <li class="fragment fade-in-then-semi-out">
+                    <pre class="fragment"><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+                </li>
+            </ul>
         </section>
         <section>
             <h1>Monoid - <i>Laws</i></h1>
-            <p>* Closure operator</p>
-            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
-            <p>* Associativity property</p>
-            <p>
-                \[\begin{aligned}
-                (a \circ b) \circ c == a \circ (b \circ c) \\
-                \end{aligned} \]
-            </p>
-            <pre><code data-trim data-noescape style="text-align: center">a.combine(b).combine(c) == a.combine(b.combine(c))</code></pre>
-            <p>* Identity</p>
-            <p>
-                \[\begin{aligned}
-                a \circ identity_{a} == a == identity_{a} \circ a \\
-                \end{aligned} \]
-            </p>
-            <pre><code data-trim data-noescape style="text-align: center">a.combine(empty()) == a == empty&lt;A&gt;().combine(a)</code></pre>
+            <ul>
+                <li class="fragment">Closure operator
+                    <ul class="fragment">
+                        <li>
+                            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment">Associativity property
+                    <ul class="fragment">
+                        <li>
+                            <p>
+                                \[\begin{aligned}
+                                (a \circ b) \circ c == a \circ (b \circ c) \\
+                                \end{aligned} \]
+                            </p>
+                            <pre><code data-trim data-noescape style="text-align: center">a.combine(b).combine(c) == a.combine(b.combine(c))</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment">Identity
+                    <ul>
+                        <li class="fragment">
+                            <p>
+                                \[\begin{aligned}
+                                a \circ identity_{a} == a == identity_{a} \circ a \\
+                                \end{aligned} \]
+                            </p>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim data-noescape style="text-align: center">a.combine(empty()) == a == empty&lt;A&gt;().combine(a)</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
         <section>
-            <h1>Monoid - <i>Definition</i></h1>
+            <h3>Monoid - <i>Definition</i></h3>
             <pre><code data-trim data-noescape>
                 interface Monoid&lt;F&gt; {
 
@@ -301,7 +325,7 @@
         </section>
         <section>
             <h1>Monoid - <i>Implementation</i></h1>
-            <pre><code data-trim data-noescape>
+            <pre class="fragment"><code data-trim data-noescape>
                 object StringMonoid : Monoid&lt;String&gt; {
 
                   override fun String.combine(b: String): String = "${this}$b"
@@ -310,7 +334,7 @@
                 }
             </code></pre>
             <br>
-            <pre><code data-trim data-noescape>
+            <pre class="fragment"><code data-trim data-noescape>
                 object IntMonoid : Monoid&lt;Int&gt; {
 
                   override fun Int.combine(b: Int): Int = this + b
@@ -321,7 +345,9 @@
         </section>
         <section>
             <h1>Monoid - <i>Testing</i></h1>
-            <pre><code data-trim data-noescape>
+            <pre class="fragment"><code data-trim data-noescape>a.combine(b).combine(c) = a.combine(b.combine(c))</code></pre>
+            <pre class="fragment"><code data-trim data-noescape> a.combine(empty)) = a && empty().combine(a) = a</code></pre>
+            <pre class="fragment"><code data-trim data-noescape>
                 fun &lt;F&gt; Monoid&lt;F&gt;.associativityLaw(a: F, b: F, c: F) =
                   Assert.assertEquals(
                     a.combine(b).combine(c),
@@ -329,7 +355,7 @@
                   )
             </code></pre>
             <br>
-            <pre><code data-trim data-noescape>
+            <pre class="fragment"><code data-trim data-noescape>
                 fun &lt;F&gt; Monoid&lt;F&gt;.identityLaw(a: F) {
                   Assert.assertEquals(a, empty().combine(a))
                   Assert.assertEquals(a, a.combine(empty()))
@@ -344,7 +370,7 @@
               init {
 
                 testLaws(
-
+                <mark>
                   Law("Monoids: identityLaw") {
                     StringMonoid.identityLaw("Hedy Lamarr")
                     IntMonoid.identityLaw(1914)
@@ -353,7 +379,7 @@
                   Law("Monoids: associativity") {
                     StringMonoid.associativityLaw("Grace", "Murray", "Hopper")
                     IntMonoid.associativityLaw(9, 12, 1906)
-                  }
+                  }</mark>
                 )
               }
             }
@@ -363,82 +389,258 @@
             <h1><i>Functor</i></h1>
         </section>
         <section>
-            <h1>Functor</h1>
-            <p><i>Transformer</i></p>
-            <p>method: map()</p>
-            <p>
+            <h3>Functor</h3>
+            <p class="fragment"><i>Transformer</i></p>
+            <p class="fragment">method: map()</p>
+            <p class="fragment">
                 \[\begin{aligned}
                 A \rightarrow map() \rightarrow B \\
                 \end{aligned} \]
             </p>
         </section>
         <section>
-            <h1>Functor - <i>Laws</i></h1>
-            <p>* Associativity</p>
-            <p>* Composition</p>
-            <p>* Identity</p>
+            <h3>Functor - <i>Laws</i></h3>
+            <ul>
+                <li class="fragment fade-in-then-semi-out">Associativity
+                    <ul>
+                        <li>
+                            <pre><code data-trim data-noescape>(a.map(b)).map(c) = a.map(b.map(c))</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment fade-in-then-semi-out">Composition
+                    <ul>
+                        <li>
+                            <pre><code data-trim data-noescape>a.map(empty()) = a && mapEmpty() = a</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment fade-in-then-semi-out">Identity
+                    <ul>
+                        <li>
+                            <pre><code data-trim data-noescape>map(id) = id</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
         <section>
             <h1>Functor - <i>Definition</i></h1>
+            <pre><code data-trim data-noescape>
+                interface Functor&lt;out F&gt; {
+
+                    fun &lt;B&gt; map(transformation: (F) -> B): Functor&lt;B&gt;
+
+                    fun &lt;A&gt; identity(a: A): A = a
+
+                    fun &lt;A, B, C&gt; ((A) -> B).andThen(g: (B) -> C): (A) -> C = {
+                        a: A -> g(this(a))
+                    }
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Functor - <i>Option</i></h1>
+            <pre><code data-trim data-noescape>
+                sealed class Option&lt;out F&gt; : Functor&lt;F&gt; {
+
+                    data class Some&lt;F&gt;(val value: F) : Option&lt;F&gt;()
+
+                    object None : Option&lt;Nothing&gt;()
+
+                    override fun &lt;B&gt; map(transformation: (F) -&gt; B): Option&lt;B&gt; = when (this) {
+                        is Some -&gt; Some(transformation(value))
+                        None -&gt; None
+                    }
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Functor - <i>Either</i></h1>
+            <pre><code data-trim data-noescape>
+                sealed class Either&lt;out E, out F&gt; : Functor&lt;F&gt; {
+
+                    data class Left&lt;E&gt;(val error: E) : Either&lt;E, Nothing&gt;()
+                    data class Right&lt;F&gt;(val value: F) : Either&lt;Nothing, F&gt;()
+
+                    override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
+                        is Right -&gt; <span class="fragment fade-out">...</span><span class="fragment">Right(transformation(value))</span>
+                        is Left  -&gt; this
+                    }
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Functor - <i>Laws</i></h1>
+            <pre class="fragment"><code data-trim data-noescape>
+                fun &lt;F&gt; Functor&lt;F&gt;.identityLaw() {
+                    Assert.assertEquals(map(::identity), this)
+                }
+            </code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape>
+                fun &lt;F, B, C&gt; Functor&lt;F&gt;.associativityLaw(a: (F) -&gt; B,
+                                                          b: (B) -&gt; C) =
+                    Assert.assertEquals(
+                        map(a).map(b), map(a andThen b) // b(a(it))
+                    )
+            </code></pre>
         </section>
         <section>
             <h1>Functor - <i>Testing</i></h1>
+            <pre class="fragment"><code data-trim data-noescape>
+                init {
+                  testLaws(
+                    Law("Functor: identityLaw") {
+                      Option.Some("Jude Milhon").identityLaw()
+                      Either.Success("Ángela Ruiz Robles").identityLaw()
+                    },
+
+                    Law("Functor: associativityLaw") {
+                      Option.Some("María Antonia Zorraquino").associativityLaw(toLength(), isEven())
+                      Either.Success("Ada Lovelace").associativityLaw(toLength(), isEven())
+                    }
+                  )
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Functor - <i>Usage</i></h1>
+            <pre><code data-trim data-noescape>
+                val optionUser = Option.Some("Lise Meitner")
+                val optionNone: Option&lt;String&gt; = Option.None
+
+                val transformed = optionUser.map { it.capitalize() }
+                val transformedNone = optionNone.map { it.capitalize() }
+
+                transformed      // Some(value=Lise Meitner)
+                transformedNone  // None
+            </code></pre>
         </section>
         <section data-background-image="assets/images/applicative-comic-book-store.webp" data-background-opacity="0.15">
             <h1><i>Applicative</i></h1>
         </section>
         <section>
             <h1>Applicative</h1>
-            <p><i>Box combiner</i></p>
+            <p class="fragment"><i>Box combiner</i></p>
+            <p class="fragment">method: ap()<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pure()
+            </p>
+            <pre class="fragment"><code data-trim data-noescape style="text-align: center">
+                Box&lt;A&gt; → ap(Box&lt;B&gt;) → Box&lt;C&gt;
+            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape style="text-align: center">
+                A → pure() → Box&lt;A&gt;
+            </code></pre>
         </section>
         <section>
             <h1>Applicative - <i>Laws</i></h1>
+            <ul>
+                <li class="fragment fade-in-then-semi-out">Identity</li>
+                <li class="fragment fade-in-then-semi-out">Composition</li>
+                <li class="fragment fade-in-then-semi-out">Associativity</li>
+                <li class="fragment fade-in-then-semi-out">Homomorphism</li>
+                <li class="fragment fade-in-then-semi-out">Interchange</li>
+                <li class="fragment fade-in-then-semi-out">...</li>
+            </ul>
         </section>
         <section>
             <h1>Applicative - <i>Definition</i></h1>
+            <pre><code data-trim data-noescape>
+                interface Applicative&lt;out A&gt; : Functor&lt;A&gt; {
+
+                  fun &lt;A&gt; pure(a: A): Applicative&lt;A&gt;
+
+                  fun &lt;B&gt; ap(ff: Applicative&lt;(A) -&gt; B&gt;): Applicative&lt;B&gt;
+
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Applicative - <i>Option</i></h1>
+            <pre><code data-trim data-noescape>
+                sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
+                  ...
+                  override fun &lt;A&gt; pure(a: A): Option&lt;A&gt; = Option.Some(a)
+                }
+
+                fun &lt;A, B&gt; Option&lt;A&gt;.ap(ff: Option&lt;(A) -&gt; B&gt;): Option&lt;B&gt; = when (this) {
+                  is Option.Some -&gt; when (ff) {
+                    is Option.Some -&gt; Option.Some(ff.value(value))
+                    Option.None -&gt; Option.None
+                  }
+                  Option.None -&gt; Option.None
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Applicative - <i>Option</i></h1>
+            <pre><code data-trim data-noescape>
+            </code></pre>
         </section>
         <section>
             <h1>Applicative - <i>Option</i></h1>
+            <pre><code data-trim data-noescape>
+            </code></pre>
         </section>
         <section>
             <h1>Applicative - <i>Usage</i></h1>
+            <pre><code data-trim data-noescape>
+                typealias GetADoctorate = (Person) -&gt; Doctorate
+
+                val howard = Person(&quot;Howard&quot;)
+
+                val getHowardADoctorate : Option&lt;GetADoctorate&gt;
+
+                val doctorate: Option&lt;Doctorate&gt; =
+                    Option.Some(howard).ap(getHowardADoctorate)
+            </code></pre>
         </section>
         <section data-background-image="assets/images/monad.webp" data-background-opacity="0.15">
             <h1><i>Monad</i></h1>
         </section>
         <section>
             <h1>Monad</h1>
-            <p><i>Box smasher</i></p>
+            <p class="fragment"><i>Box smasher</i></p>
+            <p class="fragment">method: flatmap()</p>
+            <pre class="fragment"><code data-trim data-noescape style="text-align: center">
+                Box&lt;Box&lt;A&gt;&gt; → flatmap() → Box&lt;A&gt;
+            </code></pre>
         </section>
         <section>
             <h1>Monad - <i>Laws</i></h1>
+            <ul>
+                <li class="fragment fade-in-then-semi-out">Identity</li>
+                <li class="fragment fade-in-then-semi-out">Composition</li>
+                <li class="fragment fade-in-then-semi-out">Associativity</li>
+            </ul>
         </section>
         <section>
             <h1>Monad - <i>Definition</i></h1>
+            <pre><code data-trim data-noescape>
+                fun &lt;A, B&gt; Monad&lt;A&gt;.flatMap(transform: (A) -&gt; Monad&lt;B&gt;): Monad&lt;B&gt;
+            </code></pre>
         </section>
         <section>
             <h1>Monad - <i>Option</i></h1>
+            <pre><code data-trim data-noescape>
+                sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
+                  ...
+
+                  fun &lt;B&gt; flatMap(f: (A) -&gt; Option&lt;B&gt;): Option&lt;B&gt; = when (this) {
+                    is Option.Some -&gt; f(value)
+                    is Option.None -&gt; this
+                  }
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Monad - <i>Usage</i></h1>
+            <pre><code data-trim data-noescape>
+                getOption().flatMap(::operation)
+                           .flatMap(::otherOperation)
+                           .map(println)
+            </code></pre>
         </section>
         <section data-background-image="assets/images/future.webp" data-background-opacity="0.15">
             <h1><i>Future</i></h1>
@@ -446,16 +648,43 @@
         <section>
             <h1>Future ~ Monad (if pure, in memory)</h1>
             <ul>
-                <li>Identity</li>
-                <li>Composition</li>
-                <li>Associativity</li>
+                <li class="fragment fade-in-then-semi-out">Identity</li>
+                <li class="fragment fade-in-then-semi-out">Composition</li>
+                <li class="fragment fade-in-then-semi-out">Associativity</li>
             </ul>
         </section>
         <section>
             <h1>Future - <i>Definition</i></h1>
+            <pre><code data-trim data-noescape>
+                class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
+
+                  override fun &lt;A&gt; pure(a: A): Future&lt;A&gt;
+
+                  override fun &lt;B&gt; map(transformation: (A) -&gt; B): Future&lt;B&gt;
+
+                  fun &lt;B&gt; flatMap(transform: (A) -&gt; Future&lt;B&gt;): Future&lt;B&gt;
+
+                  fun &lt;B&gt; ap(futureAB: Future&lt;(A) -&gt; B&gt;): Future&lt;B&gt;
+                }
+            </code></pre>
         </section>
         <section>
-            <h1>Monad</h1>
+            <h1>Future</h1>
+            <pre><code data-trim data-noescape>
+                class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
+
+                  override fun &lt;A&gt; pure(a: A): Future&lt;A&gt; = Future(GlobalScope.async { a })
+
+                  override fun &lt;B&gt; map(transformation: (A) -&gt; B): Future&lt;B&gt; =
+                    flatMap { Future(GlobalScope.async { transformation(it) }) }
+
+                  fun &lt;B&gt; flatMap(transform: (A) -&gt; Future&lt;B&gt;): Future&lt;B&gt; =
+                    Future(GlobalScope.async { transform(task.await()).task.await() })
+
+                  fun &lt;B&gt; ap(futureAB: Future&lt;(A) -&gt; B&gt;): Future&lt;B&gt; =
+                    Future(GlobalScope.async { futureAB.task.await()(task.await()) })
+                }
+            </code></pre>
         </section>
         <section data-background-image="assets/images/amy-yeah.webp" data-background-opacity="0.15">
 
@@ -471,22 +700,121 @@
         </section>
         <section>
             <h1>Functor</h1>
+            <pre><code data-trim data-noescape>
+                var twitter = null
+                if (user != null) {
+                  twitter = user.twitter
+                }
+
+                // Option&lt;User&gt;
+                val twitter = user.map { it.twitter }
+                Option.Some(user).map { it.twitter } // Some(“npatarino”)
+                Option.None      .map { it.twitter } // None
+            </code></pre>
         </section>
         <section data-background-image="assets/images/penny-kiss-sheldon.webp" data-background-opacity="0.15">
             <h1>Error handling</h1>
         </section>
         <section>
             <h1>Exceptions</h1>
+            <pre><code data-trim data-noescape>
+                public interface Repository {
+                    Movie getMovie(String id)
+                }
+
+                public void run() {
+                     try {
+                        final Movie movie = repository.getMovie(&quot;1&quot;);
+                          println(movie)
+                     } catch (Exception e) {
+                        System.out.println(&quot;Ouch! Error: &quot; + e.getLocalizedMessage());
+                    }
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exceptions</h1>
+            <pre><code data-trim data-noescape>
+                public interface Repository {
+                    Movie getMovie(String id) throws IOException, NoSuchFieldException;
+                }
+
+                public void run() {
+                     try {
+                        final Movie movie = repository.getMovie(&quot;1&quot;);
+                          println(movie)
+                     } catch (NoSuchFieldException e) {
+                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
+                     } catch (IOException e) {
+                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    }
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exceptions</h1>
+            <pre><code data-trim data-noescape>
+                public interface Repository {
+                    Movie getMovie(String id) throws NetworkException, NotMovieException;
+                }
+
+                public void run() {
+                     try {
+                        final Movie movie = repository.getMovie(&quot;1&quot;);
+                          println(movie)
+                     } catch (NotMovieException e) {
+                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
+                     } catch (NetworkException e) {
+                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    }
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exceptions</h1>
             <ul>
-                <li>Very expensive (fillInStackTrace)</li>
-                <li>Unchecked exceptions</li>
-                <li>Unsealed hierarchies</li>
-                <li>More complex flows</li>
-                <li>Should be exceptional</li>
+                <li class="fragment fade-in-then-semi-out">Very expensive (fillInStackTrace)</li>
+                <li class="fragment fade-in-then-semi-out">Unchecked exceptions</li>
+                <li class="fragment fade-in-then-semi-out">Unsealed hierarchies</li>
+                <li class="fragment fade-in-then-semi-out">More complex flows</li>
+                <li class="fragment fade-in-then-semi-out">Should be exceptional</li>
             </ul>
         </section>
         <section>
+            <h1>Exceptions</h1>
+            <pre><code data-trim data-noescape>
+                public interface Repository {
+                    Movie getMovie(String id) throws NetworkException, NotMovieException;
+                }
+
+                public void run() {
+                     try {
+                        final Movie movie = repository.getMovie(&quot;1&quot;);
+                          println(movie)
+                     } catch (NotMovieException e) {
+                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
+                     } catch (NetworkException e) {
+                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    }
+                }
+            </code></pre>
+        </section>
+        <section>
             <h1>Functor</h1>
+            <pre><code data-trim data-noescape>
+                interface Repository {
+                  fun getMovie(id: String): Either&lt;MovieError, Movie&gt;
+                }
+
+                fun getMovie(id: String, repository: Repository) {
+
+                  val movie = repository.getMovieById(id)
+                  when (movie) {
+                    is Either.Right -&gt; handleSuccess(movie.value)
+                    is Either.Left -&gt; handleError()
+                  }
+                }
+            </code></pre>
         </section>
         <section data-background-image="assets/images/independent.webp" data-background-opacity="0.15">
             <h1>Independency</h1>
@@ -496,18 +824,96 @@
         </section>
         <section>
             <h1>Validations</h1>
+            <pre><code data-trim data-noescape>
+                val radiatorValidator: IntValidator =
+                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator =
+                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
+
+                val tvValidator: DoubleValidator =
+                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
+
+                val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))
+            </code></pre>
         </section>
         <section>
             <h1>Validations</h1>
+            <pre><code data-trim data-noescape>
+                <pre><code data-trim data-noescape>
+                val radiatorValidator: IntValidator =
+                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator =
+                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
+
+                val tvValidator: DoubleValidator =
+                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
+
+                <mark>val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))</mark>
+            </code></pre>
+            </code></pre>
         </section>
         <section>
             <h1>Validations</h1>
+            <pre><code data-trim data-noescape>
+                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
+
+                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
+
+                val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))
+            </code></pre>
         </section>
         <section>
             <h1>This is not readable</h1>
+            <pre><code data-trim data-noescape>
+                <pre><code data-trim data-noescape>
+                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
+
+                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
+
+                val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))
+            </code></pre>
+            </code></pre>
         </section>
         <section>
-            <h1>This is not readable familiar</h1>
+            <h1>This is not
+                <del>readable</del>
+                familiar
+            </h1>
+            <pre><code data-trim data-noescape>
+                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
+
+                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
+
+                val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))
+            </code></pre>
         </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1>Dependency</h1>
@@ -518,24 +924,74 @@
         <section>
             <h1>Shelbot</h1>
             <ul>
-                <li>Buy hardware → Hardware</li>
-                <li>Assemble hardware → Device</li>
-                <li>Connect device to Internet → Robot</li>
-                <li>Put T-Shirt to robot → Shelbot</li>
+                <li class="fragment fade-in-then-semi-out">Buy hardware → Hardware</li>
+                <li class="fragment fade-in-then-semi-out">Assemble hardware → Device</li>
+                <li class="fragment fade-in-then-semi-out">Connect device to Internet → Robot</li>
+                <li class="fragment fade-in-then-semi-out">Put T-Shirt to robot → Shelbot</li>
             </ul>
         </section>
         <section>
             <h1>Shelbot</h1>
+            <pre><code data-trim data-noescape>
+                var shelbot: Sheldon? = null
+                val hardware = buyHardware()
+                if (hardware != null) {
+                  val device = assemble(hardware)
+                  if (device != null) {
+                    val robot = connectToInternet(device)
+                    if (robot != null) {
+                      shelbot = putTShirt(robot)
+                    }
+                  }
+                }
+            </code></pre>
         </section>
         <section>
             <h1>Shelbot</h1>
+            <pre><code data-trim data-noescape>
+                val shelbot: Option&lt;Sheldon&gt; =
+                  buyHardware().flatMap { hardware ->
+                    assemble(hardware).flatMap { device ->
+                      connectToInternet(device).flatMap { robot ->
+                        putTShirt(robot)
+                      }
+                    }
+                  }
+            </code></pre>
         </section>
         <section>
             <h1>Monad comprehensions</h1>
+            <pre><code data-trim data-noescape>
+                binding {
+                  val (hardware)      = buyHardware()
+                  val (device)        = assemble(hardware)
+                  val (robot)         = connectToInternet(device)
+                  val (shelbot)       = putTShirt(robot)
+                  shelbot
+                }
+            </code></pre>
         </section>
         <section data-background-image="assets/images/arrow.webp"></section>
         <section>
             <h1>Sum up</h1>
+            <ul>
+                <li class="fragment">Typeclases ~ Design patterns 😮🤫</li>
+                <li class="fragment">Monoid
+                    <ul class="fragment"><li>Combiner</li></ul>
+                </li>
+                <li class="fragment">Functor
+                    <ul class="fragment"><li>Transformer</li></ul>
+                </li>
+                <li class="fragment">Applicative
+                    <ul class="fragment"><li>Box combiner</li></ul>
+                </li>
+                <li class="fragment">Monad
+                    <ul class="fragment"><li>Box smasher</li></ul>
+                </li>
+                <li class="fragment">Future == Monad
+                    <ul class="fragment"><li>If pure, in memory</li></ul>
+                </li>
+            </ul>
         </section>
         <section data-background-image="assets/images/sheldon_board.webp" data-background-opacity="0.15">
             <h1>Conclusion</h1>
@@ -550,19 +1006,19 @@
             <h1>X-Space Toilet - Gastric juice</h1>
         </section>
         <section>
-            <h1>Continuation</h1>
+            <h1>Last things</h1>
             <ul>
                 <li>Zygohistomorphic prepromorphisms</li>
                 <li>Yoneda Lemma</li>
                 <li>Symmetric monoidal category</li>
             </ul>
         </section>
-        <section data-background-image="assets/images/bazinga.png" data-background-opacity="0.15">
+        <section data-background-color="#f40000">
+            <img src="assets/images/bazinga.png" width="600px">
         </section>
         <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15">
             <blockquote>A monad is just a monoid in the category of endofunctors.</blockquote>
         </section>
-        <section data-line-numbers="3,7-10" data-markdown="assets/md/closure_operator.md"></section>
         <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15">
             <blockquote>
                 A <b>monad</b> is just a
@@ -572,9 +1028,7 @@
                 <b>(flatMap)</b>
             </blockquote>
         </section>
-        <section data-background-image="assets/images/questions.webp" data-background-opacity="0.15">
-            <h1>Questions</h1>
-        </section>
+        <section data-background-image="assets/images/questions.png"></section>
     </div>
 </div>
 

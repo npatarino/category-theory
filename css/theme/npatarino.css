@@ -73,18 +73,17 @@ body {
     font-size: 2em;
 }
 
-.reveal h1 i {
-    font-family: "Dancing Script", Helvetica, sans-serif;
-    color: var(--main-text-accent-color);
-    font-size: 1.2em;
-}
-
 .reveal h2 {
     font-size: 1.6em;
 }
 
 .reveal h3 {
-    font-size: 1.3em;
+    font-family: "Playfair Display", Helvetica, sans-serif;
+    font-size: 2em;
+    top: -100px;
+    left: -50px;
+    position: relative;
+    text-align: left;
 }
 
 .reveal h4 {
@@ -93,6 +92,13 @@ body {
 
 .reveal h1 {
     text-shadow: none;
+}
+
+.reveal h1 i,
+.reveal h3 i {
+    font-family: "Dancing Script", Helvetica, sans-serif;
+    color: var(--main-text-accent-color);
+    font-size: 1.2em;
 }
 
 /*********************************************
@@ -137,7 +143,7 @@ body {
 }
 
 .reveal ul ul {
-    list-style-type: square;
+    list-style-type: none;
 }
 
 .reveal ul ul ul {
@@ -183,10 +189,9 @@ body {
 .reveal pre {
     display: block;
     position: relative;
-    width: 90%;
     margin: 20px auto;
     text-align: left;
-    font-size: 0.55em;
+    font-size: 0.75em;
     line-height: 1.1em;
 }
 
@@ -282,9 +287,6 @@ body {
  *********************************************/
 .reveal section img {
     margin: 15px 0px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 4px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .reveal section img.plain {
