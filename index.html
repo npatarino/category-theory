@@ -98,8 +98,8 @@
         <section>
             <h3>Design <i>patterns</i></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Offer solutions</li>
-                <li class="fragment fade-in-then-semi-out">Offer vocabulary</li>
+                <li class="fragment">Offer solutions</li>
+                <li class="fragment">Offer vocabulary</li>
             </ul>
         </section>
         <section data-background-image="assets/images/bernadette-as-mom.webp" data-background-opacity="0.15">
@@ -145,22 +145,10 @@
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section>
-            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor.png" alt=""/>
+            <h1 class="fragment">Functor</h1><img src="assets/images/indecision_3_functor_3.png" alt=""/>
         </section>
         <section>
-            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor_2.png" alt=""/>
-        </section>
-        <section>
-            <h1>Functor</h1><img class="fragment" src="assets/images/indecision_3_functor_3.png" alt=""/>
-        </section>
-        <section>
-            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad.png" alt=""/>
-        </section>
-        <section>
-            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad_2.png" alt=""/>
-        </section>
-        <section>
-            <h1>Monad</h1><img class="fragment" src="assets/images/indecision_7_monad_3.png" alt=""/>
+            <h1 class="fragment">Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
         </section>
         <section data-background-image="assets/images/after-bernadette-explanation.webp" data-background-opacity="0.15">
             <h1>Too <i>simple</i></h1>
@@ -172,7 +160,7 @@
             <h1>Basic concepts<br/><i>Composition</i></h1>
         </section>
         <section>
-            <h1>Composition</h1>
+            <h3>Composition</h3>
             <p class="fragment">
                 \[\begin{aligned}
                 N(x)N(y) == N(xy) \\
@@ -196,7 +184,7 @@
             <h1>Basic concepts<br/><i>Closure operator</i></h1>
         </section>
         <section>
-            <h1>Closure <i>operator</i></h1>
+            <h3>Closure <i>operator</i></h3>
             <pre class="fragment"><code data-trim data-noescape>fun &lt;A&gt; method(a: A): A = work(a)</code></pre>
             <br>
             <pre class="fragment"><code data-trim data-noescape>fun dollarsToEuro(dollars: Double): Double = dollars * 0.89</code></pre>
@@ -205,7 +193,7 @@
             <h1>Basic concepts<br/><i>Associativity</i></h1>
         </section>
         <section>
-            <h1><i>Associativy</i></h1>
+            <h3><i>Associativy</i></h3>
             <p class="fragment">
                 \[\begin{aligned}
                 h \circ (g \circ f) = (h \circ g) \circ f \\
@@ -218,7 +206,7 @@
             <h1>Basic concepts<br/><i>Identity</i></h1>
         </section>
         <section>
-            <h1><i>Identity</i></h1>
+            <h3><i>Identity</i></h3>
             <p class="fragment">
                 \[\begin{aligned}
                 A == A \\
@@ -238,39 +226,41 @@
             <h1><i>Typeclasses</i></h1>
         </section>
         <section>
-            <h1>Design <i>patterns</i> ~ Typleclasses</h1>
+            <h3>Design <i>patterns</i> ~ Typleclasses</h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Offer solutions</li>
-                <li class="fragment fade-in-then-semi-out">Offer vocabulary</li>
-                <li class="fragment fade-in-then-semi-out">Laws of maths</li>
-                <li class="fragment fade-in-then-semi-out">Independence (libraries, technology, languages)</li>
+                <li class="fragment">Offer solutions</li>
+                <li class="fragment">Offer vocabulary</li>
+                <li class="fragment">Laws of maths</li>
+                <li class="fragment">Independence (libraries, technology, languages)</li>
             </ul>
         </section>
         <section data-background-image="assets/images/penny-ape.webp" data-background-opacity="0.15">
             <h1><i>Typeclasses</i></h1>
         </section>
         <section>
-            <h1><i>Typeclasses</i></h1>
+            <h3><i>Typeclasses</i></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Monoid</li>
-                <li class="fragment fade-in-then-semi-out">Functor</li>
-                <li class="fragment fade-in-then-semi-out">Applicative</li>
-                <li class="fragment fade-in-then-semi-out">Monad</li>
+                <li class="fragment">Monoid</li>
+                <li class="fragment">Functor</li>
+                <li class="fragment">Applicative</li>
+                <li class="fragment">Monad</li>
             </ul>
         </section>
         <section>
-            <h1>Monoid</h1>
+            <h3>Monoid</h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">1 object category</li>
-                <li class="fragment fade-in-then-semi-out">Combiner</li>
-                <li class="fragment fade-in-then-semi-out">method: combine()</li>
-                <li class="fragment fade-in-then-semi-out">
-                    <pre class="fragment"><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
-                </li>
+                <ul>
+                    <li class="fragment">1 object category</li>
+                    <li class="fragment">Combiner</li>
+                    <li class="fragment">method: combine()</li>
+                    <li class="fragment">
+                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+                    </li>
+                </ul>
             </ul>
         </section>
         <section>
-            <h1>Monoid - <i>Laws</i></h1>
+            <h3>Monoid - <i>Laws</i></h3>
             <ul>
                 <li class="fragment">Closure operator
                     <ul class="fragment">
@@ -322,7 +312,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monoid - <i>Implementation</i></h1>
+            <h3>Monoid - <i>Implementation</i></h3>
             <pre class="fragment"><code data-trim data-noescape>
                 object StringMonoid : Monoid&lt;String&gt; {
 
@@ -342,7 +332,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monoid - <i>Testing</i></h1>
+            <h3>Monoid - <i>Testing</i></h3>
             <pre class="fragment"><code data-trim data-noescape>a.combine(b).combine(c) = a.combine(b.combine(c))</code></pre>
             <pre class="fragment"><code data-trim data-noescape> a.combine(empty)) = a && empty().combine(a) = a</code></pre>
             <pre class="fragment"><code data-trim data-noescape>
@@ -361,7 +351,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monoid - <i>Testing</i></h1>
+            <h3>Monoid - <i>Testing</i></h3>
             <pre><code data-trim data-noescape>
             class MonoidLawsTest : UnitSpec() {
 
@@ -388,32 +378,38 @@
         </section>
         <section>
             <h3>Functor</h3>
-            <p class="fragment"><i>Transformer</i></p>
-            <p class="fragment">method: map()</p>
-            <p class="fragment">
-                \[\begin{aligned}
-                A \rightarrow map() \rightarrow B \\
-                \end{aligned} \]
-            </p>
+            <ul>
+                <ul>
+                    <li class="fragment"><i>Transformer</i></li>
+                    <li class="fragment">method: map()</li>
+                    <li class="fragment">
+                        <p>
+                            \[\begin{aligned}
+                            A \rightarrow map() \rightarrow B \\
+                            \end{aligned} \]
+                        </p>
+                    </li>
+                </ul>
+            </ul>
         </section>
         <section>
             <h3>Functor - <i>Laws</i></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Associativity
+                <li class="fragment">Associativity
                     <ul>
                         <li>
                             <pre><code data-trim data-noescape>(a.map(b)).map(c) = a.map(b.map(c))</code></pre>
                         </li>
                     </ul>
                 </li>
-                <li class="fragment fade-in-then-semi-out">Composition
+                <li class="fragment">Composition
                     <ul>
                         <li>
                             <pre><code data-trim data-noescape>a.map(empty()) = a && mapEmpty() = a</code></pre>
                         </li>
                     </ul>
                 </li>
-                <li class="fragment fade-in-then-semi-out">Identity
+                <li class="fragment">Identity
                     <ul>
                         <li>
                             <pre><code data-trim data-noescape>map(id) = id</code></pre>
@@ -423,7 +419,7 @@
             </ul>
         </section>
         <section>
-            <h1>Functor - <i>Definition</i></h1>
+            <h3>Functor - <i>Definition</i></h3>
             <pre><code data-trim data-noescape>
                 interface Functor&lt;out F&gt; {
 
@@ -438,7 +434,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor - <i>Option</i></h1>
+            <h3>Functor - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
                 sealed class Option&lt;out F&gt; : Functor&lt;F&gt; {
 
@@ -454,7 +450,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor - <i>Either</i></h1>
+            <h3>Functor - <i>Either</i></h3>
             <pre><code data-trim data-noescape>
                 sealed class Either&lt;out E, out F&gt; : Functor&lt;F&gt; {
 
@@ -469,7 +465,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor - <i>Laws</i></h1>
+            <h3>Functor - <i>Laws</i></h3>
             <pre class="fragment"><code data-trim data-noescape>
                 fun &lt;F&gt; Functor&lt;F&gt;.identityLaw() {
                     Assert.assertEquals(map(::identity), this)
@@ -485,7 +481,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor - <i>Testing</i></h1>
+            <h3>Functor - <i>Testing</i></h3>
             <pre class="fragment"><code data-trim data-noescape>
                 init {
                   testLaws(
@@ -503,7 +499,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor - <i>Usage</i></h1>
+            <h3>Functor - <i>Usage</i></h3>
             <pre><code data-trim data-noescape>
                 val optionUser = Option.Some("Lise Meitner")
                 val optionNone: Option&lt;String&gt; = Option.None
@@ -519,7 +515,7 @@
             <h1><i>Applicative</i></h1>
         </section>
         <section>
-            <h1>Applicative</h1>
+            <h3>Applicative</h3>
             <p class="fragment"><i>Box combiner</i></p>
             <p class="fragment">method: ap()<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pure()
@@ -532,18 +528,18 @@
             </code></pre>
         </section>
         <section>
-            <h1>Applicative - <i>Laws</i></h1>
+            <h3>Applicative - <i>Laws</i></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Identity</li>
-                <li class="fragment fade-in-then-semi-out">Composition</li>
-                <li class="fragment fade-in-then-semi-out">Associativity</li>
-                <li class="fragment fade-in-then-semi-out">Homomorphism</li>
-                <li class="fragment fade-in-then-semi-out">Interchange</li>
-                <li class="fragment fade-in-then-semi-out">...</li>
+                <li class="fragment">Identity</li>
+                <li class="fragment">Composition</li>
+                <li class="fragment">Associativity</li>
+                <li class="fragment">Homomorphism</li>
+                <li class="fragment">Interchange</li>
+                <li class="fragment">...</li>
             </ul>
         </section>
         <section>
-            <h1>Applicative - <i>Definition</i></h1>
+            <h3>Applicative - <i>Definition</i></h3>
             <pre><code data-trim data-noescape>
                 interface Applicative&lt;out A&gt; : Functor&lt;A&gt; {
 
@@ -555,7 +551,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Applicative - <i>Option</i></h1>
+            <h3>Applicative - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
                 sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
                   ...
@@ -572,17 +568,17 @@
             </code></pre>
         </section>
         <section>
-            <h1>Applicative - <i>Option</i></h1>
+            <h3>Applicative - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
             </code></pre>
         </section>
         <section>
-            <h1>Applicative - <i>Option</i></h1>
+            <h3>Applicative - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
             </code></pre>
         </section>
         <section>
-            <h1>Applicative - <i>Usage</i></h1>
+            <h3>Applicative - <i>Usage</i></h3>
             <pre><code data-trim data-noescape>
                 typealias GetADoctorate = (Person) -&gt; Doctorate
 
@@ -598,7 +594,7 @@
             <h1><i>Monad</i></h1>
         </section>
         <section>
-            <h1>Monad</h1>
+            <h3>Monad</h3>
             <p class="fragment"><i>Box smasher</i></p>
             <p class="fragment">method: flatmap()</p>
             <pre class="fragment"><code data-trim data-noescape style="text-align: center">
@@ -606,21 +602,21 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monad - <i>Laws</i></h1>
+            <h3>Monad - <i>Laws</i></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Identity</li>
-                <li class="fragment fade-in-then-semi-out">Composition</li>
-                <li class="fragment fade-in-then-semi-out">Associativity</li>
+                <li class="fragment">Identity</li>
+                <li class="fragment">Composition</li>
+                <li class="fragment">Associativity</li>
             </ul>
         </section>
         <section>
-            <h1>Monad - <i>Definition</i></h1>
+            <h3>Monad - <i>Definition</i></h3>
             <pre><code data-trim data-noescape>
                 fun &lt;A, B&gt; Monad&lt;A&gt;.flatMap(transform: (A) -&gt; Monad&lt;B&gt;): Monad&lt;B&gt;
             </code></pre>
         </section>
         <section>
-            <h1>Monad - <i>Option</i></h1>
+            <h3>Monad - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
                 sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
                   ...
@@ -633,7 +629,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monad - <i>Usage</i></h1>
+            <h3>Monad - <i>Usage</i></h3>
             <pre><code data-trim data-noescape>
                 getOption().flatMap(::operation)
                            .flatMap(::otherOperation)
@@ -644,15 +640,15 @@
             <h1><i>Future</i></h1>
         </section>
         <section>
-            <h1>Future ~ Monad (if pure, in memory)</h1>
+            <h3>Future ~ Monad <h6>(if pure, in memory)</h6></h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Identity</li>
-                <li class="fragment fade-in-then-semi-out">Composition</li>
-                <li class="fragment fade-in-then-semi-out">Associativity</li>
+                <li class="fragment">Identity</li>
+                <li class="fragment">Composition</li>
+                <li class="fragment">Associativity</li>
             </ul>
         </section>
         <section>
-            <h1>Future - <i>Definition</i></h1>
+            <h3>Future - <i>Definition</i></h3>
             <pre><code data-trim data-noescape>
                 class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
 
@@ -667,7 +663,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Future</h1>
+            <h3>Future</h3>
             <pre><code data-trim data-noescape>
                 class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
 
@@ -697,7 +693,7 @@
             <h1>Transformations</h1>
         </section>
         <section>
-            <h1>Functor</h1>
+            <h3>Functor</h3>
             <pre><code data-trim data-noescape>
                 var twitter = null
                 if (user != null) {
@@ -714,7 +710,7 @@
             <h1>Error handling</h1>
         </section>
         <section>
-            <h1>Exceptions</h1>
+            <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
                 public interface Repository {
                     Movie getMovie(String id)
@@ -731,7 +727,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Exceptions</h1>
+            <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
                 public interface Repository {
                     Movie getMovie(String id) throws IOException, NoSuchFieldException;
@@ -750,7 +746,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Exceptions</h1>
+            <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
                 public interface Repository {
                     Movie getMovie(String id) throws NetworkException, NotMovieException;
@@ -769,17 +765,17 @@
             </code></pre>
         </section>
         <section>
-            <h1>Exceptions</h1>
+            <h3>Exceptions</h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Very expensive (fillInStackTrace)</li>
-                <li class="fragment fade-in-then-semi-out">Unchecked exceptions</li>
-                <li class="fragment fade-in-then-semi-out">Unsealed hierarchies</li>
-                <li class="fragment fade-in-then-semi-out">More complex flows</li>
-                <li class="fragment fade-in-then-semi-out">Should be exceptional</li>
+                <li class="fragment">Very expensive (fillInStackTrace)</li>
+                <li class="fragment">Unchecked exceptions</li>
+                <li class="fragment">Unsealed hierarchies</li>
+                <li class="fragment">More complex flows</li>
+                <li class="fragment">Should be exceptional</li>
             </ul>
         </section>
         <section>
-            <h1>Exceptions</h1>
+            <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
                 public interface Repository {
                     Movie getMovie(String id) throws NetworkException, NotMovieException;
@@ -798,7 +794,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Functor</h1>
+            <h3>Functor</h3>
             <pre><code data-trim data-noescape>
                 interface Repository {
                   fun getMovie(id: String): Either&lt;MovieError, Movie&gt;
@@ -821,7 +817,7 @@
             <h1>Validations</h1>
         </section>
         <section>
-            <h1>Validations</h1>
+            <h3>Validations</h3>
             <pre><code data-trim data-noescape>
                 val radiatorValidator: IntValidator =
                   createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
@@ -840,7 +836,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Validations</h1>
+            <h3>Validations</h3>
             <pre><code data-trim data-noescape>
                 <pre><code data-trim data-noescape>
                 val radiatorValidator: IntValidator =
@@ -861,7 +857,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Validations</h1>
+            <h3>Validations</h3>
             <pre><code data-trim data-noescape>
                 val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
 
@@ -877,9 +873,8 @@
             </code></pre>
         </section>
         <section>
-            <h1>This is not readable</h1>
+            <h3>This is not readable</h3>
             <pre><code data-trim data-noescape>
-                <pre><code data-trim data-noescape>
                 val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
 
                 val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
@@ -892,13 +887,12 @@
                              ::Spot.curried()
                            )))
             </code></pre>
-            </code></pre>
         </section>
         <section>
-            <h1>This is not
+            <h3>This is not
                 <del>readable</del>
                 familiar
-            </h1>
+            </h3>
             <pre><code data-trim data-noescape>
                 val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
 
@@ -920,16 +914,16 @@
             <h1>Mobile Virtual Presence Device</h1>
         </section>
         <section>
-            <h1>Shelbot</h1>
+            <h3>Shelbot</h3>
             <ul>
-                <li class="fragment fade-in-then-semi-out">Buy hardware → Hardware</li>
-                <li class="fragment fade-in-then-semi-out">Assemble hardware → Device</li>
-                <li class="fragment fade-in-then-semi-out">Connect device to Internet → Robot</li>
-                <li class="fragment fade-in-then-semi-out">Put T-Shirt to robot → Shelbot</li>
+                <li class="fragment">Buy hardware → Hardware</li>
+                <li class="fragment">Assemble hardware → Device</li>
+                <li class="fragment">Connect device to Internet → Robot</li>
+                <li class="fragment">Put T-Shirt to robot → Shelbot</li>
             </ul>
         </section>
         <section>
-            <h1>Shelbot</h1>
+            <h3>Shelbot</h3>
             <pre><code data-trim data-noescape>
                 var shelbot: Sheldon? = null
                 val hardware = buyHardware()
@@ -945,7 +939,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Shelbot</h1>
+            <h3>Shelbot</h3>
             <pre><code data-trim data-noescape>
                 val shelbot: Option&lt;Sheldon&gt; =
                   buyHardware().flatMap { hardware ->
@@ -958,7 +952,7 @@
             </code></pre>
         </section>
         <section>
-            <h1>Monad comprehensions</h1>
+            <h3>Monad comprehensions</h3>
             <pre><code data-trim data-noescape>
                 binding {
                   val (hardware)      = buyHardware()
@@ -971,23 +965,33 @@
         </section>
         <section data-background-image="assets/images/arrow.webp"></section>
         <section>
-            <h1>Sum up</h1>
+            <h3>Sum up</h3>
             <ul>
                 <li class="fragment">Typeclases ~ Design patterns 😮🤫</li>
                 <li class="fragment">Monoid
-                    <ul class="fragment"><li>Combiner</li></ul>
+                    <ul class="fragment">
+                        <li>Combiner</li>
+                    </ul>
                 </li>
                 <li class="fragment">Functor
-                    <ul class="fragment"><li>Transformer</li></ul>
+                    <ul class="fragment">
+                        <li>Transformer</li>
+                    </ul>
                 </li>
                 <li class="fragment">Applicative
-                    <ul class="fragment"><li>Box combiner</li></ul>
+                    <ul class="fragment">
+                        <li>Box combiner</li>
+                    </ul>
                 </li>
                 <li class="fragment">Monad
-                    <ul class="fragment"><li>Box smasher</li></ul>
+                    <ul class="fragment">
+                        <li>Box smasher</li>
+                    </ul>
                 </li>
                 <li class="fragment">Future == Monad
-                    <ul class="fragment"><li>If pure, in memory</li></ul>
+                    <ul class="fragment">
+                        <li>If pure, in memory</li>
+                    </ul>
                 </li>
             </ul>
         </section>
@@ -1004,20 +1008,20 @@
             <h1>X-Space Toilet - Gastric juice</h1>
         </section>
         <section>
-            <h1>Last things</h1>
+            <h3>Last things</h3>
             <ul>
-                <li>Zygohistomorphic prepromorphisms</li>
-                <li>Yoneda Lemma</li>
-                <li>Symmetric monoidal category</li>
+                <li class="fragment">Zygohistomorphic prepromorphisms</li>
+                <li class="fragment">Yoneda Lemma</li>
+                <li class="fragment">Symmetric monoidal category</li>
             </ul>
         </section>
         <section data-background-color="#f40000">
             <img src="assets/images/bazinga.png" width="600px">
         </section>
-        <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15">
+        <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15" data-transition="slide-in none-out">
             <blockquote>A monad is just a monoid in the category of endofunctors.</blockquote>
         </section>
-        <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15">
+        <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15" data-transition="none-in slide-out">
             <blockquote>
                 A <b>monad</b> is just a
                 <b>monoid (combine + empty)</b>
@@ -1034,8 +1038,8 @@
 
 <script>
     Reveal.initialize({
-        width: 1920,
-        height: 1080,
+        width: 2560,
+        height: 1440,
         controls: false,
         transition: 'slide',
         backgroundTransition: 'slide',
