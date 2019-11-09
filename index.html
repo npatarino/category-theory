@@ -189,6 +189,12 @@
             <h1 class="fragment">Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
         </section>
         <section data-background-image="assets/images/really.webp"></section>
+        <section>
+            <h1>Functor</h1><img src="assets/images/indecision_3_functor_3.png" alt=""/>
+        </section>
+        <section>
+            <h1>Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
+        </section>
         <section data-background-image="assets/images/after-bernadette-explanation.webp" data-background-opacity="0.15">
             <h1>Too <i>simple</i></h1>
         </section>
@@ -293,7 +299,7 @@
                     <li class="fragment">Combiner</li>
                     <li class="fragment">method: combine()</li>
                     <li class="fragment">
-                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.plus(b)</code></pre>
                     </li>
                 </ul>
             </ul>
@@ -304,7 +310,7 @@
                 <li class="fragment">Closure operator
                     <ul class="fragment">
                         <li>
-                            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.work(b)</code></pre>
+                            <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.plus(b)</code></pre>
                         </li>
                     </ul>
                 </li>
@@ -374,6 +380,7 @@
             <h3>Monoid - <i>Testing</i></h3>
             <pre class="fragment"><code data-trim data-noescape>a.combine(b).combine(c) = a.combine(b.combine(c))</code></pre>
             <pre class="fragment"><code data-trim data-noescape> a.combine(empty)) = a && empty().combine(a) = a</code></pre>
+            <br>
             <pre class="fragment"><code data-trim data-noescape>
                 fun &lt;F&gt; Monoid&lt;F&gt;.associativityLaw(a: F, b: F, c: F) =
                   Assert.assertEquals(
