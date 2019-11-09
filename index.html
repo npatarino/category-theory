@@ -23,7 +23,24 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section data-background-image="assets/images/cover.webp"></section>
+        <section data-background-image="assets/images/cover.webp">
+            <p class ="fragment" data-audio-src="assets/audio/intro.ogg"></p>
+            <aside class="notes">
+                En el 2010, un muchachito que estaba re tranquilo en las oficinas de Jetbrains en Rusia cuando dijo:
+                "Che, ningún lenguaje cumple con todo lo que yo considero que un lenguaje de programación debería tener.
+                Bueno, ninguno menos Scala, pero como tarda muchísimo en compilar, creo que voy empezar a escribir mi
+                propio lenguaje de programación, con barcos y data clases, sí, eso es lo que voy a hacer, voy a
+                escribir mi propio lenguaje."
+                Y se puso a escribir, y se puso a escribir, y se puso a escribir y así finalmente, llegó Kotlin.
+                Lo que este muchachito no sabía es que se iba a poner re feliz cuando en 2012 liberó el código fuente,
+                pero más feliz se puso cuando en ese mismo año le dijeron que era el lunaguaje del año, pero más feliz
+                se puse cuando en 2015 sacaron la primera versión, pero más feliz se puso cuando los desarradores de
+                Android lo empezaron a usar, pero más feliz se puso cuando en 2017 Google lo anunció como lenhguaje
+                de programación oficial para Android, pero más feliz se puso cuando todos empezaban a decir que
+                Kotlin era un lenguaje funcional. Bueno, no sé si se puso tan feliz con eso, pero que se empezó a decir
+                se empezó a decir.
+            </aside>
+        </section>
         <section data-background-image="assets/images/pasadena.webp" data-background-opacity="0.15">
             <h1>Pasadena</h1>
             <h1><i>California</i></h1>
@@ -1067,7 +1084,7 @@
                 <li class="fragment">Symmetric monoidal category</li>
             </ul>
         </section>
-        <section data-background-color="#f40000">
+        <section data-background-color="#f40000"  data-audio-src="assets/audio/bazinga.ogg">
             <img src="assets/images/bazinga.png" width="600px">
         </section>
         <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15"
@@ -1109,7 +1126,8 @@
             {src: 'plugin/markdown/markdown.js'},
             {src: 'plugin/notes/notes.js', async: true},
             {src: 'plugin/highlight/highlight.js', async: true},
-            {src: 'plugin/math/math.js', async: true}
+            {src: 'plugin/math/math.js', async: true},
+            {src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } }
         ]
     });
 </script>
