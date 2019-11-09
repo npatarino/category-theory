@@ -374,13 +374,12 @@
         </section>
         <section>
             <h3>Monoid - <i>Testing</i></h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape data-line-numbers="6-14">
             class MonoidLawsTest : UnitSpec() {
 
               init {
 
                 testLaws(
-                <mark>
                   Law("Monoids: identityLaw") {
                     StringMonoid.identityLaw("Hedy Lamarr")
                     IntMonoid.identityLaw(1914)
@@ -389,7 +388,7 @@
                   Law("Monoids: associativity") {
                     StringMonoid.associativityLaw("Grace", "Murray", "Hopper")
                     IntMonoid.associativityLaw(9, 12, 1906)
-                  }</mark>
+                  }
                 )
               }
             }
@@ -839,8 +838,35 @@
             <h1>Validations</h1>
         </section>
         <section>
+            <h3>Currying</h3>
+            <ul>
+                <ul>
+                    <li>
+                        \[\begin{aligned}
+                        f: (X\;x\;Y) \rightarrow Z \\
+                        \end{aligned} \]
+                    </li>
+                    <li>
+                        \[\begin{aligned}
+                        (f): X \rightarrow (Y \rightarrow Z) \\
+                        \end{aligned} \]
+                    </li>
+                </ul>
+            </ul>
+        </section>
+        <section>
             <h3>Validations</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape data-line-numbers="1-14">
+                typealias Validator&lt;L, R&gt; = (R) -&gt; Either&lt;L, R&gt;
+
+                typealias IntValidator =Validator&lt;SpotError, Int&gt;
+                typealias BooleanValidator =Validator&lt;SpotError, Boolean&gt;
+                typealias DoubleValidator =Validator&lt;SpotError, Double&gt;
+            </code></pre>
+        </section>
+        <section>
+            <h3>Validations</h3>
+            <pre><code data-trim data-noescape data-line-numbers="1-14">
                 val radiatorValidator: IntValidator =
                   createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
 
@@ -859,8 +885,7 @@
         </section>
         <section>
             <h3>Validations</h3>
-            <pre><code data-trim data-noescape>
-                <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape data-line-numbers="10-14">
                 val radiatorValidator: IntValidator =
                   createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
 
@@ -869,23 +894,6 @@
 
                 val tvValidator: DoubleValidator =
                   createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
-
-                <mark>val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))</mark>
-            </code></pre>
-            </code></pre>
-        </section>
-        <section>
-            <h3>Validations</h3>
-            <pre><code data-trim data-noescape>
-                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
-
-                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
 
                 val spot = (tvValidator(53.00))   ap
                            (breezeValidator(true) ap
@@ -896,12 +904,34 @@
         </section>
         <section>
             <h3>This is not readable</h3>
-            <pre><code data-trim data-noescape>
-                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
+            <pre><code data-trim data-noescape data-line-numbers="10-14">
+                val radiatorValidator: IntValidator =
+                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
 
-                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
+                val breezeValidator: BooleanValidator =
+                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
 
-                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
+                val tvValidator: DoubleValidator =
+                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
+
+                val spot = (tvValidator(53.00))   ap
+                           (breezeValidator(true) ap
+                           (radiatorValidator(5).map(
+                             ::Spot.curried()
+                           )))
+            </code></pre>
+        </section>
+        <section>
+            <h3>This is not readable</h3>
+            <pre><code data-trim data-noescape data-line-numbers="10-14">
+                val radiatorValidator: IntValidator =
+                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
+
+                val breezeValidator: BooleanValidator =
+                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
+
+                val tvValidator: DoubleValidator =
+                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
 
                 val spot = (tvValidator(53.00))   ap
                            (breezeValidator(true) ap
