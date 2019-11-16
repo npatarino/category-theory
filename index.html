@@ -253,6 +253,7 @@
                     <pre class="fragment"><code data-trim
                                                 data-noescape>fun sum(a: Int, b: Int): Int = a + b</code></pre>
                 </li>
+                <li>&nbsp;</li>
                 <li>
                     <pre class="fragment"><code data-trim data-noescape>fun validation() = sum(3, sum(4, 5)) == sum(sum(3, 4), 5)</code></pre>
                 </li>
@@ -307,9 +308,12 @@
             <ul>
                 <ul>
                     <li class="fragment">Combiner</li>
-                    <li class="fragment">method: combine()</li>
+                    <li class="fragment">method: combine()<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empty()
+                    </li>
                     <li class="fragment">
                         <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.plus(b)</code></pre>
+                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.empty(): A</code></pre>
                     </li>
                 </ul>
             </ul>
@@ -345,48 +349,6 @@
                 }
             </code></pre>
         </section>
-        <section>
-            <h3>Monoid - <i>Testing</i></h3>
-            <pre class="fragment"><code data-trim data-noescape>a.combine(b).combine(c) = a.combine(b.combine(c))</code></pre>
-            <pre class="fragment"><code data-trim data-noescape> a.combine(empty)) = a && empty().combine(a) = a</code></pre>
-            <br>
-            <pre class="fragment"><code data-trim data-noescape>
-                fun &lt;F&gt; Monoid&lt;F&gt;.associativityLaw(a: F, b: F, c: F) =
-                  Assert.assertEquals(
-                    a.combine(b).combine(c),
-                    a.combine(b.combine(c))
-                  )
-            </code></pre>
-            <br>
-            <pre class="fragment"><code data-trim data-noescape>
-                fun &lt;F&gt; Monoid&lt;F&gt;.identityLaw(a: F) {
-                  Assert.assertEquals(a, empty().combine(a))
-                  Assert.assertEquals(a, a.combine(empty()))
-                }
-            </code></pre>
-        </section>
-        <section>
-            <h3>Monoid - <i>Testing</i></h3>
-            <pre><code data-trim data-noescape data-line-numbers="6-14">
-            class MonoidLawsTest : UnitSpec() {
-
-              init {
-
-                testLaws(
-                  Law("Monoids: identityLaw") {
-                    StringMonoid.identityLaw("Hedy Lamarr")
-                    IntMonoid.identityLaw(1914)
-                  },
-
-                  Law("Monoids: associativity") {
-                    StringMonoid.associativityLaw("Grace", "Murray", "Hopper")
-                    IntMonoid.associativityLaw(9, 12, 1906)
-                  }
-                )
-              }
-            }
-            </code></pre>
-        </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1><i>Functor</i></h1>
         </section>
@@ -416,9 +378,9 @@
                 }
             </code></pre>
         </section>
-        <section>
+        <section data-transition="slide-in none-out">
             <h3>Functor - <i>Option</i></h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape data-line-numbers="1-11">
                 sealed class Option&lt;out F&gt; : Functor&lt;F&gt; {
 
                     data class Some&lt;F&gt;(val value: F) : Option&lt;F&gt;()
@@ -432,7 +394,7 @@
                 }
             </code></pre>
         </section>
-        <section>
+        <section data-transition="none-in slide-out">
             <h3>Functor - <i>Option</i></h3>
             <pre><code data-trim data-noescape data-line-numbers="8-9">
                 sealed class Option&lt;out F&gt; : Functor&lt;F&gt; {
@@ -448,144 +410,75 @@
                 }
             </code></pre>
         </section>
-        <section>
+        <section data-transition="slide-in none-out">
             <h3>Functor - <i>Either</i></h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape data-line-numbers="1-10">
                 sealed class Either&lt;out E, out F&gt; : Functor&lt;F&gt; {
 
                     data class Left&lt;E&gt;(val error: E) : Either&lt;E, Nothing&gt;()
                     data class Right&lt;F&gt;(val value: F) : Either&lt;Nothing, F&gt;()
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
-                        is Right -&gt; <span class="fragment fade-out">...</span><span class="fragment">Right(transformation(value))</span>
-                        is Left  -&gt; this
+                        is Right -&gt; Right(transformation(value))</span>
+                is Left  -&gt; this
                     }
                 }
             </code></pre>
         </section>
-        <section>
-            <h3>Functor - <i>Laws</i></h3>
-            <pre class="fragment"><code data-trim data-noescape>
-                fun &lt;F&gt; Functor&lt;F&gt;.identityLaw() {
-                    Assert.assertEquals(map(::identity), this)
-                }
-            </code></pre>
-            <br>
-            <pre class="fragment"><code data-trim data-noescape>
-                fun &lt;F, B, C&gt; Functor&lt;F&gt;.associativityLaw(a: (F) -&gt; B,
-                                                          b: (B) -&gt; C) =
-                    Assert.assertEquals(
-                        map(a).map(b), map(a andThen b) // b(a(it))
-                    )
-            </code></pre>
-        </section>
-        <section>
-            <h3>Functor - <i>Testing</i></h3>
-            <pre class="fragment"><code data-trim data-noescape>
-                init {
-                  testLaws(
-                    Law("Functor: identityLaw") {
-                      Option.Some("Jude Milhon").identityLaw()
-                      Either.Success("Ángela Ruiz Robles").identityLaw()
-                    },
+        <section data-transition="none-in none-out">
+            <h3>Functor - <i>Either</i></h3>
+            <pre><code data-trim data-noescape data-line-numbers="8">
+                sealed class Either&lt;out E, out F&gt; : Functor&lt;F&gt; {
 
-                    Law("Functor: associativityLaw") {
-                      Option.Some("María Antonia Zorraquino").associativityLaw(toLength(), isEven())
-                      Either.Success("Ada Lovelace").associativityLaw(toLength(), isEven())
+                    data class Left&lt;E&gt;(val error: E) : Either&lt;E, Nothing&gt;()
+                    data class Right&lt;F&gt;(val value: F) : Either&lt;Nothing, F&gt;()
+
+                    override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
+                        is Right -&gt; Right(transformation(value))</span>
+                is Left  -&gt; this
                     }
-                  )
+                }
+            </code></pre>
+        </section>
+        <section data-transition="none-in slide-out">
+            <h3>Functor - <i>Either</i></h3>
+            <pre><code data-trim data-noescape data-line-numbers="7">
+                sealed class Either&lt;out E, out F&gt; : Functor&lt;F&gt; {
+
+                    data class Left&lt;E&gt;(val error: E) : Either&lt;E, Nothing&gt;()
+                    data class Right&lt;F&gt;(val value: F) : Either&lt;Nothing, F&gt;()
+
+                    override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
+                        is Right -&gt; Right(transformation(value))</span>
+                is Left  -&gt; this
+                    }
                 }
             </code></pre>
         </section>
         <section>
             <h3>Functor - <i>Usage</i></h3>
             <pre><code data-trim data-noescape>
-                val optionUser = Option.Some("Lise Meitner")
-                val optionNone: Option&lt;String&gt; = Option.None
-
-                val transformed = optionUser.map { it.capitalize() }
-                val transformedNone = optionNone.map { it.capitalize() }
-
-                transformed      // Some(value=Lise Meitner)
-                transformedNone  // None
-            </code></pre>
-        </section>
-        <section data-background-image="assets/images/applicative-comic-book-store.webp" data-background-opacity="0.15">
-            <h1><i>Applicative</i></h1>
-        </section>
-        <section>
-            <h3>Applicative</h3>
-            <ul>
-                <li class="fragment"><i>Box combiner</i></li>
-                <li class="fragment"><i>method: ap()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pure()</i>
-                </li>
-                <li class="fragment">
-                    <pre class="fragment"><code data-trim data-noescape>
-                Box&lt;A&gt; → ap(Box&lt;B&gt;) → Box&lt;C&gt;
-            </code></pre>
-                </li>
-                <li class="fragment">
-                    <pre class="fragment"><code data-trim data-noescape>A → pure() → Box&lt;A&gt;</code></pre>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h3>Applicative - <i>Definition</i></h3>
-            <pre><code data-trim data-noescape>
-                interface Applicative&lt;out A&gt; : Functor&lt;A&gt; {
-
-                  fun &lt;A&gt; pure(a: A): Applicative&lt;A&gt;
-
-                  fun &lt;B&gt; ap(ff: Applicative&lt;(A) -&gt; B&gt;): Applicative&lt;B&gt;
-
-                }
-            </code></pre>
-        </section>
-        <section>
-            <h3>Applicative - <i>Option</i></h3>
-            <pre><code data-trim data-noescape>
-                sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
-                  ...
-                  override fun &lt;A&gt; pure(a: A): Option&lt;A&gt; = Option.Some(a)
-                }
-
-                fun &lt;A, B&gt; Option&lt;A&gt;.ap(ff: Option&lt;(A) -&gt; B&gt;): Option&lt;B&gt; = when (this) {
-                  is Option.Some -&gt; when (ff) {
-                    is Option.Some -&gt; Option.Some(ff.value(value))
-                    Option.None -&gt; Option.None
-                  }
-                  Option.None -&gt; Option.None
-                }
-            </code></pre>
-        </section>
-        <section>
-            <h3>Applicative - <i>Option</i></h3>
-            <pre><code data-trim data-noescape>
-            </code></pre>
-        </section>
-        <section>
-            <h3>Applicative - <i>Option</i></h3>
-            <pre><code data-trim data-noescape>
-            </code></pre>
-        </section>
-        <section>
-            <h3>Applicative - <i>Usage</i></h3>
-            <pre><code data-trim data-noescape>
-                typealias GetADoctorate = (Person) -&gt; Doctorate
-
-                val howard = Person(&quot;Howard&quot;)
-
-                val getHowardADoctorate : Option&lt;GetADoctorate&gt;
-
-                val doctorate: Option&lt;Doctorate&gt; =
-                    Option.Some(howard).ap(getHowardADoctorate)
+                <ul style="list-style-type: none">
+                    <li class="fragment">
+                        val optionUser = Option.Some("Lise Meitner")
+                        val optionNone: Option&lt;String&gt; = Option.None
+                    </li>
+                    <li class="fragment">
+                        val transformed = optionUser.map { it.capitalize() }
+                        val transformedNone = optionNone.map { it.capitalize() }
+                    </li>
+                    <li class="fragment">
+                        transformed      // Some(value=Lise Meitner)
+                        transformedNone  // None
+                    </li>
+                </ul>
             </code></pre>
         </section>
         <section data-background-image="assets/images/monad.webp" data-background-opacity="0.15">
             <h1><i>Monad</i></h1>
         </section>
         <section>
-            <h3>Monad</h3>
+            <h3>Monad <i class="fragment">+ monoid <i class="fragment">+ functor</i></i></h3>
             <p class="fragment"><i>Box smasher</i></p>
             <p class="fragment">method: flatmap()</p>
             <pre class="fragment"><code data-trim data-noescape style="text-align: center">
@@ -601,7 +494,7 @@
         <section>
             <h3>Monad - <i>Option</i></h3>
             <pre><code data-trim data-noescape>
-                sealed class Option&lt;out A&gt; : Applicative&lt;A&gt; {
+                sealed class Option&lt;out A&gt; : Monad&lt;A&gt; {
                   ...
 
                   fun &lt;B&gt; flatMap(f: (A) -&gt; Option&lt;B&gt;): Option&lt;B&gt; = when (this) {
@@ -619,57 +512,14 @@
                            .map(println)
             </code></pre>
         </section>
-        <section data-background-image="assets/images/future.webp" data-background-opacity="0.15">
-            <h1><i>Future</i></h1>
-        </section>
-        <section>
-            <h3>Future ~ Monad <h6>(if pure, in memory)</h6></h3>
-            <ul>
-                <li class="fragment">Identity</li>
-                <li class="fragment">Composition</li>
-                <li class="fragment">Associativity</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Future - <i>Definition</i></h3>
-            <pre><code data-trim data-noescape>
-                class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
-
-                  override fun &lt;A&gt; pure(a: A): Future&lt;A&gt;
-
-                  override fun &lt;B&gt; map(transformation: (A) -&gt; B): Future&lt;B&gt;
-
-                  fun &lt;B&gt; flatMap(transform: (A) -&gt; Future&lt;B&gt;): Future&lt;B&gt;
-
-                  fun &lt;B&gt; ap(futureAB: Future&lt;(A) -&gt; B&gt;): Future&lt;B&gt;
-                }
-            </code></pre>
-        </section>
-        <section>
-            <h3>Future</h3>
-            <pre><code data-trim data-noescape>
-                class Future&lt;out A&gt;(private val task: Deferred&lt;A&gt;) : Applicative&lt;A&gt; {
-
-                  override fun &lt;A&gt; pure(a: A): Future&lt;A&gt; = Future(GlobalScope.async { a })
-
-                  override fun &lt;B&gt; map(transformation: (A) -&gt; B): Future&lt;B&gt; =
-                    flatMap { Future(GlobalScope.async { transformation(it) }) }
-
-                  fun &lt;B&gt; flatMap(transform: (A) -&gt; Future&lt;B&gt;): Future&lt;B&gt; =
-                    Future(GlobalScope.async { transform(task.await()).task.await() })
-
-                  fun &lt;B&gt; ap(futureAB: Future&lt;(A) -&gt; B&gt;): Future&lt;B&gt; =
-                    Future(GlobalScope.async { futureAB.task.await()(task.await()) })
-                }
-            </code></pre>
-        </section>
         <section data-background-image="assets/images/amy-yeah.webp" data-background-opacity="0.15">
 
         </section>
         <section data-background-image="assets/images/penny-lost.webp" data-background-opacity="0.15">
 
         </section>
-        <section data-background-image="assets/images/penny-wonderwoman.webp" data-background-opacity="0.15">
+        <section data-background-image="assets/images/penny-wonderwoman.webp" data-background-opacity="0.15"
+                 data-audio-src="assets/audio/superhero.mp3">
             <h1>Daily usage</h1>
         </section>
         <section data-background-image="assets/images/howard-as-sheldon.webp" data-background-opacity="0.15">
@@ -793,134 +643,6 @@
                 }
             </code></pre>
         </section>
-        <section data-background-image="assets/images/independent.webp" data-background-opacity="0.15">
-            <h1>Independency</h1>
-        </section>
-        <section data-background-image="assets/images/validations.webp" data-background-opacity="0.15">
-            <h1>Validations</h1>
-        </section>
-        <section>
-            <h3>Currying</h3>
-            <ul>
-                <ul>
-                    <li>
-                        \[\begin{aligned}
-                        f: (X\;x\;Y) \rightarrow Z \\
-                        \end{aligned} \]
-                    </li>
-                    <li>
-                        \[\begin{aligned}
-                        (f): X \rightarrow (Y \rightarrow Z) \\
-                        \end{aligned} \]
-                    </li>
-                </ul>
-            </ul>
-        </section>
-        <section>
-            <h3>Validations</h3>
-            <pre><code data-trim data-noescape data-line-numbers="1-14">
-                typealias Validator&lt;L, R&gt; = (R) -&gt; Either&lt;L, R&gt;
-
-                typealias IntValidator =Validator&lt;SpotError, Int&gt;
-                typealias BooleanValidator =Validator&lt;SpotError, Boolean&gt;
-                typealias DoubleValidator =Validator&lt;SpotError, Double&gt;
-            </code></pre>
-        </section>
-        <section>
-            <h3>Validations</h3>
-            <pre><code data-trim data-noescape data-line-numbers="1-14">
-                val radiatorValidator: IntValidator =
-                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator =
-                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
-
-                val tvValidator: DoubleValidator =
-                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
-
-                val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))
-            </code></pre>
-        </section>
-        <section>
-            <h3>Validations</h3>
-            <pre><code data-trim data-noescape data-line-numbers="10-14">
-                val radiatorValidator: IntValidator =
-                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator =
-                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
-
-                val tvValidator: DoubleValidator =
-                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
-
-                val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))
-            </code></pre>
-        </section>
-        <section>
-            <h3>This is not readable</h3>
-            <pre><code data-trim data-noescape data-line-numbers="10-14">
-                val radiatorValidator: IntValidator =
-                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator =
-                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
-
-                val tvValidator: DoubleValidator =
-                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
-
-                val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))
-            </code></pre>
-        </section>
-        <section>
-            <h3>This is not readable</h3>
-            <pre><code data-trim data-noescape data-line-numbers="10-14">
-                val radiatorValidator: IntValidator =
-                  createValidator({ isValidDistance(it) }, SpotError.DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator =
-                  createValidator({ isValidToBeInBreezePath(it) }, SpotError.NotInBreezePath)
-
-                val tvValidator: DoubleValidator =
-                  createValidator({ isValidAngleToTv(it) }, SpotError.BadTvAngle)
-
-                val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))
-            </code></pre>
-        </section>
-        <section>
-            <h3>This is not
-                <del>readable</del>
-                familiar
-            </h3>
-            <pre><code data-trim data-noescape>
-                val radiatorValidator: IntValidator = createValidator({ isValidDistance(it) }, DistanceToRadiator)
-
-                val breezeValidator: BooleanValidator = createValidator({ isValidToBeInBreezePath(it) }, NotInBreezePath)
-
-                val tvValidator: DoubleValidator = createValidator({ isValidAngleToTv(it) }, BadTvAngle)
-
-                val spot = (tvValidator(53.00))   ap
-                           (breezeValidator(true) ap
-                           (radiatorValidator(5).map(
-                             ::Spot.curried()
-                           )))
-            </code></pre>
-        </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1>Dependency</h1>
         </section>
@@ -992,25 +714,15 @@
                         <li>Transformer</li>
                     </ul>
                 </li>
-                <li class="fragment">Applicative
-                    <ul class="fragment">
-                        <li>Box combiner</li>
-                    </ul>
-                </li>
                 <li class="fragment">Monad
                     <ul class="fragment">
                         <li>Box smasher</li>
                     </ul>
                 </li>
-                <li class="fragment">Future == Monad
-                    <ul class="fragment">
-                        <li>If pure, in memory</li>
-                    </ul>
-                </li>
             </ul>
         </section>
         <section data-background-image="assets/images/sheldon_board.webp" data-background-opacity="0.15">
-            <h1>Conclusion</h1>
+            <h1>Should I study Category Theory?</h1>
         </section>
         <section data-background-image="assets/images/jenga.webp" data-background-opacity="0.15">
             <h1>Carpenter - Advanced trigonometry</h1>
@@ -1020,6 +732,9 @@
         </section>
         <section data-background-image="assets/images/pop-machine.webp" data-background-opacity="0.15">
             <h1>X-Space Toilet - Gastric juice</h1>
+        </section>
+        <section data-background-image="assets/images/future.webp" data-background-opacity="0.15">
+            <h1>Functional Programming - Category Theory</h1>
         </section>
         <section>
             <h3>Last things</h3>
