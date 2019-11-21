@@ -102,6 +102,14 @@ section.has-light-background, section.has-light-background h1, section.has-light
     font-size: 1.2em;
 }
 
+.reveal h1 em, .reveal h2 em, .reveal h3 em, .reveal h4 em, .reveal h5 em, .reveal h6 em {
+    color: var(--main-text-accent-color);
+}
+
+.reveal h1 i, .reveal h2 i, .reveal h3 i, .reveal h4 i, .reveal h5 i, .reveal h6 i {
+    color: var(--main-text-accent-color);
+}
+
 /*********************************************
  * OTHER
  *********************************************/
