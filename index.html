@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/npatarino.css">
+    <link rel="stylesheet" type="text/css" href="css/theme/template/mode-dark.css" id="theme">
 
     <link rel="stylesheet" href="lib/css/monokai.css">
 
@@ -792,6 +793,7 @@
             {src: 'plugin/notes/notes.js', async: true},
             {src: 'plugin/highlight/highlight.js', async: true},
             {src: 'plugin/math/math.js', async: true},
+            {src: 'plugin/menu/menu.js'},
             {
                 src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function () {
                     return !!document.body.classList;

@@ -1,0 +1,136 @@
+:root {
+    --main-text-selected-color: #3d3d3d;
+    --code-text-default-color: #37474F;
+}
+
+
+.hljs {
+    color: var(--code-text-default-color) !important;
+}
+
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-name {
+    color: #3F50B5 !important;
+}
+
+.hljs-code {
+    color: #66d9ef;
+}
+
+.hljs-class .hljs-title {
+    color: var(--code-text-default-color);
+}
+
+.hljs-attribute,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+    color: #bf79db;
+}
+
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: #378F3B !important;
+}
+
+.hljs-name,
+.hljs-variable,
+.hljs-type {
+    color: #3F50B5 !important;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+    color: #7E9E7F;
+}
+
+
+/*span.CodeMirror {*/
+/*    color:#2e383c;*/
+/*    line-height:1.4375;*/
+/*}*/
+/*span.cm-comment { color:#000000; }*/
+/*span.cm-keyword, span.cm-property { color:#1d75b3; }*/
+/*span.cm-atom,span.cm-number { color:#75438a; }*/
+/*span.cm-node,span.cm-tag { color:#9c3328; }*/
+/*span.cm-string { color:#b35e14; }*/
+/*span.cm-variable,span.cm-qualifier { color:#3d3d3d; }*/
+/*span.cm-operator { color: #999999; }*/
+
+/*!* Editor styling *!*/
+
+/*span.pre {*/
+/*    padding:0;*/
+/*}*/
+
+/*span.CodeMirror-gutters {*/
+/*    border:none;*/
+/*    border-right:10px solid transparent;*/
+/*    background-color:transparent;*/
+/*}*/
+
+/*span.CodeMirror-linenumber {*/
+/*    padding:0;*/
+/*    color:#e0e2e5;*/
+/*}*/
+
+/*span.CodeMirror-guttermarker { color: #1d75b3; }*/
+/*span.CodeMirror-guttermarker-subtle { color: #e0e2e5; }*/
+
+/*span.CodeMirror-cursor {*/
+/*    width: auto;*/
+/*    border: 0;*/
+/*    background: rgba(155,157,162,0.37);*/
+/*    z-index: 1;*/
+/*}*/
+
+body {
+    background-color: #fefefe;
+}
+
+.reveal {
+    color: var(--main-text-selected-color);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    color: var(--main-text-selected-color);
+}
+
+.reveal p.hashtag {
+    color: #cccccc;
+}
+
+.reveal blockquote {
+    color: #3d3d3d;
+    background: #ffffff80;
+    box-shadow: 0 0 0;
+}
+
+.CodeMirror {
+    background: #fefefe !important;
+    height: auto;
+    color: #cccccc;
+}
