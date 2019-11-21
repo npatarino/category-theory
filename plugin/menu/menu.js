@@ -540,7 +540,6 @@ var RevealMenu = window.RevealMenu || (function(){
 						return button;
 					}
 
-					addToolbarButton('Slides', 'Slides', 'fa-images', 'fas', openPanel, true);
 					addToolbarButton('Fullscreen', 'Fullscreen', 'fa-expand', 'fas', closePanelAndFullscreen, true);
 					addToolbarButton('Theme', 'Mode', 'fa-adjust', 'fas', switchThemeMode, true);
 
@@ -563,94 +562,6 @@ var RevealMenu = window.RevealMenu || (function(){
 					button.onclick = function() { closeMenu(null, true) };
 					toolbar.appendChild(button);
 
-					//
-					// Slide links
-					//
-					function generateItem(type, section, i, h, v) {
-						var link = '/#/' + h;
-						if (typeof v === 'number' && !isNaN( v )) link += '/' + v;
-
-						function text(selector, parent) {
-							var el = (parent ? select(selector, section) : select(selector));
-							if (el) return el.textContent;
-							return null;
-						}
-						var title = section.getAttribute('data-menu-title') ||
-							text('.menu-title', section) ||
-							text(titleSelector, section);
-
-						if (!title && useTextContentForMissingTitles) {
-							// attempt to figure out a title based on the text in the slide
-							title = section.textContent.trim();
-							if (title) {
-								title = title.split('\n')
-									.map(function(t) { return t.trim() }).join(' ').trim()
-									.replace(/^(.{16}[^\s]*).*/, "$1") // limit to 16 chars plus any consecutive non-whitespace chars (to avoid breaking words)
-									.replace(/&/g, "&amp;")
-									.replace(/</g, "&lt;")
-									.replace(/>/g, "&gt;")
-									.replace(/"/g, "&quot;")
-									.replace(/'/g, "&#039;") + '...';
-							}
-						}
-
-						if (!title) {
-							if (hideMissingTitles) return '';
-							type += ' no-title';
-							title = "Slide " + i;
-						}
-
-						var item = create('li', {
-							class: type,
-							'data-item': i,
-							'data-slide-h': h,
-							'data-slide-v': (v === undefined ? 0 : v)
-						});
-
-						if (markers) {
-							item.appendChild(create('i', {class: 'fas fa-check-circle fa-fw past'}));
-							item.appendChild(create('i', {class: 'fas fa-arrow-alt-circle-right fa-fw active'}));
-							item.appendChild(create('i', {class: 'far fa-circle fa-fw future'}));
-						}
-
-						if (numbers) {
-							// Number formatting taken from reveal.js
-							var value = [];
-							var format = 'h.v';
-
-							// Check if a custom number format is available
-							if( typeof numbers === 'string' ) {
-								format = numbers;
-							}
-							else if (typeof config.slideNumber === 'string') {
-								// Take user defined number format for slides
-								format = config.slideNumber;
-							}
-
-							switch( format ) {
-								case 'c':
-									value.push( i );
-									break;
-								case 'c/t':
-									value.push( i, '/', Reveal.getTotalSlides() );
-									break;
-								case 'h/v':
-									value.push( h + 1 );
-									if( typeof v === 'number' && !isNaN( v ) ) value.push( '/', v + 1 );
-									break;
-								default:
-									value.push( h + 1 );
-									if( typeof v === 'number' && !isNaN( v ) ) value.push( '.', v + 1 );
-							}
-
-							item.appendChild(create('span', {class: 'slide-menu-item-number'}, value.join('') + '. '));
-						}
-
-						item.appendChild(create('span', {class: 'slide-menu-item-title'}, title));
-						
-						return item;
-					}
-
 					function createSlideMenu() {
 						if ( !document.querySelector('section[data-markdown]:not([data-markdown-parsed])') ) {
 							var panel = create('div', {
@@ -659,31 +570,6 @@ var RevealMenu = window.RevealMenu || (function(){
 							});
 							panel.appendChild(create('ul', {class: "slide-menu-items"}));
 							panels.appendChild(panel);
-							var items = select('.slide-menu-panel[data-panel="Slides"] > .slide-menu-items');
-							var slideCount = 0;
-							selectAll('.slides > section').forEach(function(section, h) {
-								var subsections = selectAll('section', section);
-								if (subsections.length > 0) {
-									subsections.forEach(function(subsection, v) {
-										var type = (v === 0 ? 'slide-menu-item' : 'slide-menu-item-vertical');
-										var item = generateItem(type, subsection, slideCount, h, v);
-										if (item) {
-											slideCount++;
-											items.appendChild(item);
-										}
-									});
-								} else {
-									var item = generateItem('slide-menu-item', section, slideCount, h);
-									if (item) {
-										slideCount++;
-										items.appendChild(item);
-									}
-								}
-							});
-							selectAll('.slide-menu-item, .slide-menu-item-vertical').forEach(function(i) {
-								i.onclick = clicked;
-							});
-							highlightCurrentSlide();
 						}
 						else {
 						// wait for markdown to be loaded and parsed

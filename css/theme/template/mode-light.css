@@ -3,9 +3,12 @@
     --code-text-default-color: #37474F;
 }
 
-
 .hljs {
     color: var(--code-text-default-color) !important;
+}
+
+.fa-bars {
+    color: var(--main-text-selected-color);
 }
 
 .hljs-tag,
