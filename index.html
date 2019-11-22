@@ -174,32 +174,44 @@
             <h1>The indecision <i>amalgamation</i></h1>
         </section>
         <section data-transition="slide-in none-out">
-            <h1>&nbsp;</h1>
+            <h1 class="fragment" data-fragment-index="3">Functor</h1>
             <img class="fragment" data-fragment-index="1" src="assets/images/indecision_3_functor.png" alt=""/>
-        </section>
-        <section data-transition="none">
-            <h1>&nbsp;</h1><img src="assets/images/indecision_3_functor_2.png" alt=""/>
-        </section>
-        <section data-transition="none-in slide-out">
-            <h1 class="fragment">Functor</h1><img src="assets/images/indecision_3_functor_3.png" alt=""/>
+            <p class="fragment" data-fragment-index="2">
+                \[\begin{aligned}
+                Box&lt;Xbox&gt;&nbsp;&nbsp;\xrightarrow{\qquad replace()\qquad} Box&lt;PS4&gt; \\
+                \end{aligned} \]
+            </p>
         </section>
         <section data-background-image="assets/images/comeon.webp"></section>
         <section data-transition="slide-in none-out">
-            <h1>&nbsp;</h1>
-            <img class="fragment" src="assets/images/indecision_7_monad.png" alt=""/>
-        </section>
-        <section data-transition="none">
-            <h1>&nbsp;</h1><img src="assets/images/indecision_7_monad_2.png" alt=""/>
-        </section>
-        <section data-transition="none-in slide-out">
-            <h1 class="fragment">Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
+            <h1 class="fragment" data-fragment-index="3">Monad</h1>
+            <img class="fragment" data-fragment-index="1" src="assets/images/indecision_7_monad.png" alt=""/>
+            <p class="fragment" data-fragment-index="2">
+                \[\begin{aligned}
+                Box&lt;Box&lt;Xbox&gt;&gt;&nbsp;&nbsp;\xrightarrow{\qquad replace()\qquad} Box&lt;Xbox&gt; \\
+                \end{aligned} \]
+            </p>
         </section>
         <section data-background-image="assets/images/really.webp"></section>
-        <section>
-            <h1>Functor</h1><img src="assets/images/indecision_3_functor_3.png" alt=""/>
+        <section data-transition="slide-in none-out">
+            <h1>Functor</h1>
+            <img src="assets/images/indecision_3_functor.png" alt=""/>
+            <p data-fragment-index="2">
+                \[\begin{aligned}
+                Box&lt;Xbox&gt;&nbsp;&nbsp;\xrightarrow{\qquad map()\qquad} Box&lt;PS4&gt; \\
+                \end{aligned} \]
+            </p>
         </section>
         <section>
-            <h1>Monad</h1><img src="assets/images/indecision_7_monad_3.png" alt=""/>
+            <section data-transition="slide-in none-out">
+                <h1>Monad</h1>
+                <img src="assets/images/indecision_7_monad.png" alt=""/>
+                <p data-fragment-index="2">
+                    \[\begin{aligned}
+                    Box&lt;Box&lt;Xbox&gt;&gt;&nbsp;&nbsp;\xrightarrow{\qquad flatmap()\qquad} Box&lt;Xbox&gt; \\
+                    \end{aligned} \]
+                </p>
+            </section>
         </section>
         <section data-background-image="assets/images/after-bernadette-explanation.webp" data-background-opacity="0.15">
             <h1>Too <i>simple</i></h1>
@@ -313,13 +325,9 @@
             <h3>Monoid</h3>
             <ul>
                 <ul>
-                    <li class="fragment">Combiner</li>
+                    <li class="fragment">Box Combiner</li>
                     <li class="fragment">method: combine()<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empty()
-                    </li>
-                    <li class="fragment">
-                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.combine(b: A): A = this.plus(b)</code></pre>
-                        <pre><code data-trim data-noescape style="text-align: center">fun &lt;A&gt; A.empty(): A</code></pre>
                     </li>
                 </ul>
             </ul>
@@ -362,12 +370,12 @@
             <h3>Functor</h3>
             <ul>
                 <ul>
-                    <li class="fragment"><i>Transformer</i></li>
+                    <li class="fragment"><i>Box Transformer</i></li>
                     <li class="fragment">method: map()</li>
                     <li class="fragment">
                         <p>
                             \[\begin{aligned}
-                            A \rightarrow map() \rightarrow B \\
+                            Box&lt;A&gt; \rightarrow map() \rightarrow Box&lt;B&gt; \\
                             \end{aligned} \]
                         </p>
                     </li>
@@ -426,7 +434,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                is Left  -&gt; this
+                        is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -441,7 +449,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                is Left  -&gt; this
+                        is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -456,7 +464,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                is Left  -&gt; this
+                        is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -800,7 +808,7 @@
             {src: 'plugin/notes/notes.js', async: true},
             {src: 'plugin/highlight/highlight.js', async: true},
             {src: 'plugin/math/math.js', async: true},
-            {src: 'bower_components/reveal.js-menu/menu.js' },
+            {src: 'bower_components/reveal.js-menu/menu.js'},
             {
                 src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function () {
                     return !!document.body.classList;
