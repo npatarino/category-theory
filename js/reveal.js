@@ -1451,6 +1451,7 @@
 		keyboardShortcuts['End  ,  &#8984;/CTRL &#8594;']  = 'Last slide';
 		keyboardShortcuts['B  ,  .']                       = 'Pause';
 		keyboardShortcuts['F']                             = 'Fullscreen';
+		keyboardShortcuts['T']                             = 'Theme';
 		keyboardShortcuts['ESC, O']                        = 'Slide overview';
 
 		sync();
@@ -5281,6 +5282,9 @@
 			else if( keyCode === 70 ) {
 				enterFullscreen();
 			}
+            else if( keyCode === 84 ) {
+
+            }
 			// A
 			else if( keyCode === 65 ) {
 				if ( config.autoSlideStoppable ) {

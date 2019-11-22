@@ -787,13 +787,20 @@
         margin: 0.1,
         minScale: 0.2,
         maxScale: 1.5,
+        menu: {
+            width: 'normal',
+            themes: [
+                {name: 'Black', theme: 'css/theme/template/mode-dark.css'},
+                {name: 'Light', theme: 'css/theme/template/mode-light.css'},
+            ]
+        },
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
             {src: 'plugin/notes/notes.js', async: true},
             {src: 'plugin/highlight/highlight.js', async: true},
             {src: 'plugin/math/math.js', async: true},
-            {src: 'plugin/menu/menu.js'},
+            {src: 'bower_components/reveal.js-menu/menu.js' },
             {
                 src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function () {
                     return !!document.body.classList;
