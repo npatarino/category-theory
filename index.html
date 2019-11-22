@@ -363,6 +363,17 @@
                 }
             </code></pre>
         </section>
+        <section>
+            <h3>Monoid - <i>Implementation</i></h3>
+            <pre class="fragment"><code data-trim data-noescape>
+                object AmyMonoid : Monoid&lt;String&gt; {
+
+                  override fun String.combine(sheldon: String): String = "Shamy"
+
+                  override fun empty(): String = Arp
+                }
+            </code></pre>
+        </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1><i>Functor</i></h1>
         </section>
@@ -474,15 +485,15 @@
             <pre><code data-trim data-noescape>
                 <ul style="list-style-type: none">
                     <li class="fragment">
-                        val optionUser = Option.Some("Lise Meitner")
+                        val optionUser = Option.Some("Blossom")
                         val optionNone: Option&lt;String&gt; = Option.None
                     </li>
                     <li class="fragment">
-                        val transformed = optionUser.map { it.capitalize() }
-                        val transformedNone = optionNone.map { it.capitalize() }
+                        val transformed = optionUser.map { it.toTbbt() }
+                        val transformedNone = optionNone.map { it.toTbbt() }
                     </li>
                     <li class="fragment">
-                        transformed      // Some(value=Lise Meitner)
+                        transformed      // Some(value=Amy Farrah Fowler)
                         transformedNone  // None
                     </li>
                 </ul>
@@ -520,10 +531,24 @@
         </section>
         <section>
             <h3>Monad - <i>Usage</i></h3>
-            <pre><code data-trim data-noescape>
-                getOption().flatMap(::operation)
-                           .flatMap(::otherOperation)
-                           .map(println)
+            <pre class="fragment"><code data-trim data-noescape>
+                fun putInSchrodingerBox(cat: Cat) : Box&lt;Cat&gt;
+                </code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape>
+                getCat().map(::putInSchrodingerBox)
+                        .map(::putInSchrodingerBox)
+                        .map(::putInSchrodingerBox)
+                        .map(::putInSchrodingerBox)
+                        .map(println) <span class="fragment">// Box&lt;Box&lt;Box&lt;Cat&gt&gt&gt;</span>
+            </code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape>
+                getCat().flatMap(::putInSchrodingerBox)
+                        .flatMap(::putInSchrodingerBox)
+                        .flatMap(::putInSchrodingerBox)
+                        .flatMap(::putInSchrodingerBox)
+                        .map(println) <span class="fragment">// Cat</span>
             </code></pre>
         </section>
         <section data-background-image="assets/images/amy-yeah.webp" data-background-opacity="0.15">
@@ -541,16 +566,21 @@
         </section>
         <section>
             <h3>Functor</h3>
-            <pre><code data-trim data-noescape>
-                var twitter = null
+            <pre class="fragment"><code data-trim data-noescape>
+                var rajesh = null
                 if (user != null) {
-                  twitter = user.twitter
+                  isDrunk = user.isDrunk
+                  if (isDrunk) {
+                    rajesh.talkToWoman()
+                  }
                 }
-
-                // Option&lt;User&gt;
-                val twitter = user.map { it.twitter }
-                Option.Some(user).map { it.twitter } // Some(“npatarino”)
-                Option.None      .map { it.twitter } // None
+            </code></pre>
+            <br>
+            <pre class="fragment"><code data-trim data-noescape>
+                // rajesh: Option&lt;User&gt;
+                val isDrunk = rajesh.map { it.isDrunk }
+                Option.Some(user).map { if(it) rajesh.talkToWoman() } // Some(“npatarino”)
+                Option.None      .map { if(it) rajesh.talkToWoman() } // None
             </code></pre>
         </section>
         <section data-background-image="assets/images/penny-kiss-sheldon.webp" data-background-opacity="0.15">
@@ -559,16 +589,16 @@
         <section>
             <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
-                public interface Repository {
-                    Movie getMovie(String id)
+                public interface SchrodingersCatRepository {
+                    Cat getCat(String id)
                 }
 
                 public void run() {
-                     try {
-                        final Movie movie = repository.getMovie(&quot;1&quot;);
-                          println(movie)
-                     } catch (Exception e) {
-                        System.out.println(&quot;Ouch! Error: &quot; + e.getLocalizedMessage());
+                    try {
+                        final Cat cat = repository.getCat(&quot;1&quot;);
+                        println(cat)
+                    } catch (Exception e) {
+                        System.out.println(&quot;Ouch! Dead cat: &quot; + e.getLocalizedMessage());
                     }
                 }
             </code></pre>
@@ -576,18 +606,18 @@
         <section>
             <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
-                public interface Repository {
-                    Movie getMovie(String id) throws IOException, NoSuchFieldException;
+                public interface SchrodingersCatRepository {
+                    Cat getCat(String id) throws IOException, NoSuchFieldException;
                 }
 
                 public void run() {
-                     try {
-                        final Movie movie = repository.getMovie(&quot;1&quot;);
-                          println(movie)
-                     } catch (NoSuchFieldException e) {
-                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
-                     } catch (IOException e) {
-                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    try {
+                        final Cat cat = repository.getCat(&quot;1&quot;);
+                        println(cat)
+                    } catch (NoSuchFieldException e) {
+                        System.out.println(&quot;Not cat alive found error: &quot; + e.getLocalizedMessage());
+                    } catch (IOException e) {
+                        System.out.println(&quot;Box cannot be opened error: &quot; + e.getLocalizedMessage());
                     }
                 }
             </code></pre>
@@ -595,18 +625,18 @@
         <section>
             <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
-                public interface Repository {
-                    Movie getMovie(String id) throws NetworkException, NotMovieException;
+                public interface SchrodingersCatRepository {
+                    Cat getCat(String id) throws NotCatAliveException, BoxCannotOpenException;
                 }
 
                 public void run() {
-                     try {
-                        final Movie movie = repository.getMovie(&quot;1&quot;);
-                          println(movie)
-                     } catch (NotMovieException e) {
-                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
-                     } catch (NetworkException e) {
-                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    try {
+                        final Cat cat = repository.getCat(&quot;1&quot;);
+                        println(cat)
+                    } catch (NotCatAliveException e) {
+                        System.out.println(&quot;Not cat alive found error: &quot; + e.getLocalizedMessage());
+                    } catch (BoxCannotOpenException e) {
+                        System.out.println(&quot;Box cannot be opened error: &quot; + e.getLocalizedMessage());
                     }
                 }
             </code></pre>
@@ -624,36 +654,39 @@
         <section>
             <h3>Exceptions</h3>
             <pre><code data-trim data-noescape>
-                public interface Repository {
-                    Movie getMovie(String id) throws NetworkException, NotMovieException;
+                public interface SchrodingersCatRepository {
+                    Cat getCat(String id) throws NotCatAliveException, BoxCannotOpenException;
                 }
 
                 public void run() {
-                     try {
-                        final Movie movie = repository.getMovie(&quot;1&quot;);
-                          println(movie)
-                     } catch (NotMovieException e) {
-                          System.out.println(&quot;Not movie found error: &quot; + e.getLocalizedMessage());
-                     } catch (NetworkException e) {
-                          System.out.println(&quot;Network error: &quot; + e.getLocalizedMessage());
+                    try {
+                        final Cat cat = repository.getCat(&quot;1&quot;);
+                        println(cat)
+                    } catch (NotCatAliveException e) {
+                        System.out.println(&quot;Not cat alive found error: &quot; + e.getLocalizedMessage());
+                    } catch (BoxCannotOpenException e) {
+                        System.out.println(&quot;Box cannot be opened error: &quot; + e.getLocalizedMessage());
                     }
                 }
             </code></pre>
         </section>
         <section>
             <h3>Functor</h3>
-            <pre><code data-trim data-noescape>
-                interface Repository {
-                  fun getMovie(id: String): Either&lt;MovieError, Movie&gt;
+            <pre class="fragment"><code data-trim data-noescape>
+                interface SchrodingersCatRepository {
+                    fun getCat(String id): Either&lg;CatRepositoryError, Cat&gt;
                 }
-
-                fun getMovie(id: String, repository: Repository) {
-
-                  val movie = repository.getMovieById(id)
-                  when (movie) {
-                    is Either.Right -&gt; handleSuccess(movie.value)
-                    is Either.Left -&gt; handleError()
-                  }
+            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape>
+                fun run() {
+                    val cat = repository.getCat(id)
+                    when (movie) {
+                        is Either.Right -> handleSuccess(cat.value)
+                        is Either.Left -> when (cat.error) {
+                            is NotCatAliveError -> handleNotAlive()
+                            is BoxCannotOpen -> handleBoxNotOpen()
+                        }
+                    }
                 }
             </code></pre>
         </section>
@@ -720,12 +753,12 @@
                 <li class="fragment">Typeclases ~ Design patterns 😮🤫</li>
                 <li class="fragment">Monoid
                     <ul class="fragment">
-                        <li>Combiner</li>
+                        <li>Box Combiner</li>
                     </ul>
                 </li>
                 <li class="fragment">Functor
                     <ul class="fragment">
-                        <li>Transformer</li>
+                        <li>Box Transformer</li>
                     </ul>
                 </li>
                 <li class="fragment">Monad
@@ -775,7 +808,8 @@
                 <b>(flatMap)</b>
             </blockquote>
         </section>
-        <section data-background-image="assets/images/questions.png"></section>
+        <section data-background-image="assets/images/questions.png"
+                 data-audio-src="assets/audio/final-song.mp3"></section>
     </div>
 </div>
 

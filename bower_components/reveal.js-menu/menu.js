@@ -767,10 +767,13 @@ var RevealMenu = window.RevealMenu || (function(){
 					if (openButton) {
 						// add menu button
 						var div = create('div', {class: 'slide-menu-button'});
+						var twitter = create('div', {class: 'twitter-handle'});
 						var link = create('a', {href: '#'});
 						link.appendChild(create('i', {class: 'fas fa-bars'}));
 						div.appendChild(link);
+						twitter.append("@npatarino")
 						select('.reveal').appendChild(div);
+						select('.reveal').appendChild(twitter);
 						div.onclick = openMenu;
 					}
 
