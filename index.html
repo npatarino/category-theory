@@ -193,109 +193,20 @@
             </p>
         </section>
         <section data-background-image="assets/images/really.webp"></section>
-        <section data-transition="slide-in none-out">
-            <h1>Functor</h1>
-            <img src="assets/images/indecision_3_functor.png" alt=""/>
-            <p data-fragment-index="2">
+        <section>
+            <h1>Monad</h1>
+            <img src="assets/images/indecision_7_monad_b.png" alt=""/>
+            <p>
                 \[\begin{aligned}
-                Box&lt;Xbox&gt;&nbsp;&nbsp;\xrightarrow{\qquad map()\qquad} Box&lt;PS4&gt; \\
+                Box&lt;Box&lt;Xbox&gt;&gt;&nbsp;&nbsp;\xrightarrow{\qquad replace()\qquad} Box&lt;PS4&gt; \\
                 \end{aligned} \]
             </p>
-        </section>
-        <section>
-            <section data-transition="slide-in none-out">
-                <h1>Monad</h1>
-                <img src="assets/images/indecision_7_monad.png" alt=""/>
-                <p data-fragment-index="2">
-                    \[\begin{aligned}
-                    Box&lt;Box&lt;Xbox&gt;&gt;&nbsp;&nbsp;\xrightarrow{\qquad flatmap()\qquad} Box&lt;Xbox&gt; \\
-                    \end{aligned} \]
-                </p>
-            </section>
         </section>
         <section data-background-image="assets/images/after-bernadette-explanation.webp" data-background-opacity="0.15">
             <h1>Too <i>simple</i></h1>
         </section>
         <section data-background-image="assets/images/amy-explanation.webp" data-background-opacity="0.15">
             <h1><i>Amy</i> explanation</h1>
-        </section>
-        <section data-background-image="assets/images/star-wars-composition.webp" data-background-opacity="0.15">
-            <h1>Basic concepts<br/><i>Composition</i></h1>
-        </section>
-        <section>
-            <h3>Composition</h3>
-            <p class="fragment">
-                \[\begin{aligned}
-                A \xrightarrow{\qquad f\qquad} B \xrightarrow{\qquad g\qquad} C \\
-                \end{aligned} \]
-            </p>
-
-            <p class="fragment">
-                \[\begin{aligned}
-                A \xrightarrow{\qquad f \circ g \qquad} C \\
-                \end{aligned} \]
-            </p>
-            <ul style="list-style-type:none">
-                <li class="fragment">
-                    <pre><code data-trim data-noescape>fun getBottle() : Bottle</code></pre>
-                </li>
-                <li class="fragment">
-                    <pre><code data-trim data-noescape>fun fillGlass(bottle: Bottle)</code></pre>
-                </li>
-                <li class="fragment">
-                    <pre><code data-trim data-noescape>fillGlass(getBottle()) = getBottleAndFillGlass()</code></pre>
-                </li>
-            </ul>
-        </section>
-        <section data-background-image="assets/images/young-old.webp" data-background-opacity="0.15">
-            <h1>Basic concepts<br/><i>Closure operator</i></h1>
-        </section>
-        <section>
-            <h3>Closure <i>operator</i></h3>
-            <pre class="fragment"><code data-trim data-noescape>fun &lt;A&gt; method(a: A): A = work(a)</code></pre>
-            <br>
-            <pre class="fragment"><code data-trim data-noescape>fun dollarsToEuro(dollars: Double): Double = dollars * 0.89</code></pre>
-        </section>
-        <section data-background-image="assets/images/superheroes.webp" data-background-opacity="0.15">
-            <h1>Basic concepts<br/><i>Associativity</i></h1>
-        </section>
-        <section>
-            <h3><i>Associativy</i></h3>
-            <p class="fragment">
-                \[\begin{aligned}
-                h \circ (g \circ f) = (h \circ g) \circ f \\
-                \end{aligned} \]
-            </p>
-            <ul style="list-style-type: none">
-                <li>
-                    <pre class="fragment"><code data-trim
-                                                data-noescape>fun sum(a: Int, b: Int): Int = a + b</code></pre>
-                </li>
-                <li>&nbsp;</li>
-                <li>
-                    <pre class="fragment"><code data-trim data-noescape>fun validation() = sum(3, sum(4, 5)) == sum(sum(3, 4), 5)</code></pre>
-                </li>
-            </ul>
-        </section>
-        <section data-background-image="assets/images/identity.webp" data-background-opacity="0.15">
-            <h1>Basic concepts<br/><i>Identity</i></h1>
-        </section>
-        <section>
-            <h3><i>Identity</i></h3>
-            <p class="fragment">
-                \[\begin{aligned}
-                A == A \\
-                \end{aligned} \]
-            </p>
-            <p class="fragment">
-                \[\begin{aligned}
-                f \circ id_{a} == f == id_{b} \circ f \\
-                \end{aligned} \]
-            </p>
-            <pre class="fragment"><code data-trim data-noescape style="text-align: center">val text = "Big Bang Category Theory".plus("")</code></pre>
-            <br>
-            <pre class="fragment"><code data-trim data-noescape
-                                        style="text-align: center">val number = 2019.plus(0)</code></pre>
         </section>
         <section data-background-image="assets/images/beards.webp" data-background-opacity="0.15">
             <h1><i>Typeclasses</i></h1>
@@ -306,7 +217,7 @@
                 <li class="fragment">Offer solutions</li>
                 <li class="fragment">Offer vocabulary</li>
                 <li class="fragment">Laws of maths</li>
-                <li class="fragment">Independence (libraries, technology, languages)</li>
+                <li class="fragment">Independence</li>
             </ul>
         </section>
         <section data-background-image="assets/images/penny-ape.webp" data-background-opacity="0.15">
@@ -317,7 +228,6 @@
             <ul>
                 <li class="fragment">Monoid</li>
                 <li class="fragment">Functor</li>
-                <li class="fragment">Applicative</li>
                 <li class="fragment">Monad</li>
             </ul>
         </section>
@@ -363,17 +273,6 @@
                 }
             </code></pre>
         </section>
-        <section>
-            <h3>Monoid - <i>Implementation</i></h3>
-            <pre class="fragment"><code data-trim data-noescape>
-                object AmyMonoid : Monoid&lt;String&gt; {
-
-                  override fun String.combine(sheldon: String): String = "Shamy"
-
-                  override fun empty(): String = Arp
-                }
-            </code></pre>
-        </section>
         <section data-background-image="assets/images/guys-lost.webp" data-background-opacity="0.15">
             <h1><i>Functor</i></h1>
         </section>
@@ -401,6 +300,9 @@
                     fun &lt;B&gt; map(transformation: (F) -> B): Functor&lt;B&gt;
 
                 }
+            </code></pre>
+            <pre class="fragment"><code data-trim data-noescape>
+                fun method(f: F) : B
             </code></pre>
         </section>
         <section data-transition="slide-in none-out">
@@ -445,7 +347,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                        is Left  -&gt; this
+                is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -460,7 +362,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                        is Left  -&gt; this
+                is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -475,7 +377,7 @@
 
                     override fun &lt;B&gt; map(transformation: (F) -&gt; B): Either&lt;B, E&gt; = when (this) {
                         is Right -&gt; Right(transformation(value))</span>
-                        is Left  -&gt; this
+                is Left  -&gt; this
                     }
                 }
             </code></pre>
@@ -489,8 +391,8 @@
                         val optionNone: Option&lt;String&gt; = Option.None
                     </li>
                     <li class="fragment">
-                        val transformed = optionUser.map { it.toTbbt() }
-                        val transformedNone = optionNone.map { it.toTbbt() }
+                        val transformed = optionUser.map { it.upgradeToTheBigBangTheory() }
+                        val transformedNone = optionNone.map { it.upgradeToTheBigBangTheory() }
                     </li>
                     <li class="fragment">
                         transformed      // Some(value=Amy Farrah Fowler)
@@ -722,7 +624,7 @@
             </code></pre>
         </section>
         <section>
-            <h3>Shelbot</h3>
+            <h3>Monads</h3>
             <pre><code data-trim data-noescape>
                 val shelbot: Option&lt;Sheldon&gt; =
                   buyHardware().flatMap { hardware ->
@@ -738,10 +640,10 @@
             <h3>Monad comprehensions</h3>
             <pre><code data-trim data-noescape>
                 binding {
-                  val (hardware)      = buyHardware()
-                  val (device)        = assemble(hardware)
-                  val (robot)         = connectToInternet(device)
-                  val (shelbot)       = putTShirt(robot)
+                  val (hardware) = buyHardware()
+                  val (device)   = assemble(hardware)
+                  val (robot)    = connectToInternet(device)
+                  val (shelbot)  = putTShirt(robot)
                   shelbot
                 }
             </code></pre>
@@ -783,6 +685,9 @@
         <section data-background-image="assets/images/future.webp" data-background-opacity="0.15">
             <h1>Functional Programming - Category Theory</h1>
         </section>
+        <section data-background-image="assets/images/functional-end.png" data-background-opacity="0.15">
+            <h1>Should I do Functional Programming right now?</h1>
+        </section>
         <section>
             <h3>Last things</h3>
             <ul>
@@ -792,7 +697,7 @@
             </ul>
         </section>
         <section data-background-color="#f40000" data-audio-src="assets/audio/bazinga.ogg">
-            <img src="assets/images/bazinga.png" width="600px">
+            <img src="assets/images/bazinga.png" width="600px" alt="">
         </section>
         <section data-background-image="assets/images/ouh-yeah.webp" data-background-opacity="0.15"
                  data-transition="slide-in none-out">
